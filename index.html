@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="dark" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Musyafa Anasrullah | Software Engineering Student | Software Engineer Intern</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/images/favicon.png" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Portfolio of Musyafa Anasrullah, a Software Engineering student focused on software development, web development, backend engineering, problem solving, and building real-world applications." />
+  <meta name="keywords" content="Musyafa Anasrullah, Software Engineer Intern, Software Engineering Student, Web Development Internship, Backend Engineer Intern, Full Stack Developer, Indonesia, BSI" />
+  <meta name="author" content="Musyafa Anasrullah" />
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Musyafa Anasrullah | Software Engineer Intern Portfolio" />
+  <meta property="og:description" content="Portfolio of Musyafa Anasrullah - Software Engineering Student seeking Software Engineering Internship opportunities." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              400: '#38bdf8',
+              500: '#0ea5e9',
+              600: '#0284c7',
+              700: '#0369a1',
+              900: '#0c4a6e',
+              950: '#082f49'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Outfit', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+            heading: ['Outfit', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Main Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-sky-500 selection:text-white relative overflow-x-hidden transition-colors duration-300">
+  
+  <!-- Canvas for Cyber Blue Particle Glow Background -->
+  <canvas id="particle-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-60"></canvas>
+
+  <!-- Notification Toast Container -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-3"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="navbar sticky top-0 z-40 w-full backdrop-blur-md bg-slate-950/85 border-b border-slate-800/80 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 xl:h-20 flex items-center justify-between gap-3">
+      
+      <!-- Desktop Navigation Menu — only visible on xl+ -->
+      <nav class="hidden xl:flex items-center flex-1" id="nav-links" style="gap:3px">
+        <a href="#home" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors active" data-i18n="nav_home">Home</a>
+        <a href="#about" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_about">About</a>
+        <a href="#journey" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_journey">Journey</a>
+        <a href="#skills" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_skills">Skills</a>
+        <a href="#dsa" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_dsa">Problem Solving</a>
+        <a href="#projects" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_projects">Projects</a>
+        <a href="#experience" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_experience">Experience</a>
+        <a href="#github" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_github">GitHub</a>
+        <a href="#achievements" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_achievements">Certificates</a>
+        <a href="#internship" class="nav-link px-2.5 py-1.5 text-[11.5px] font-bold text-sky-400 hover:text-sky-300 rounded-lg transition-colors" data-i18n="nav_internship">Internship</a>
+        <a href="#contact" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <!-- Right Controls: Language Selector, Theme Toggle, Hamburger -->
+      <div class="nav-controls ml-auto flex items-center gap-2 flex-shrink-0 z-50">
+
+        <!-- Language Selector -->
+        <div class="lang-selector-wrapper relative inline-block text-left flex-shrink-0">
+          <div class="flex items-center bg-slate-900/90 border border-slate-700/80 rounded-xl px-2.5 py-1.5 text-xs text-slate-300 hover:border-sky-500/50 transition shadow-inner">
+            <i class="fa-solid fa-globe lang-icon text-sky-400 mr-1.5 text-xs"></i>
+            <select id="lang-select" class="lang-select bg-transparent text-slate-200 text-xs font-medium focus:outline-none cursor-pointer pr-1" aria-label="Select Language">
+              <option value="id" class="bg-slate-900 text-slate-100">🇮🇩 ID</option>
+              <option value="en" class="bg-slate-900 text-slate-100">🇬🇧 EN</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button id="theme-toggle" class="theme-toggle p-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-sky-500/50 transition flex items-center justify-center w-9 h-9 shadow-inner flex-shrink-0 cursor-pointer" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
+          <i class="fa-solid fa-sun sun-icon text-sm text-amber-400"></i>
+          <i class="fa-solid fa-moon moon-icon text-sm text-sky-400"></i>
+        </button>
+
+        <!-- Hamburger Button — hidden on xl+, visible on smaller screens -->
+        <button id="hamburger" class="hamburger xl:hidden p-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-sky-500/50 flex flex-col justify-center items-center gap-1.5 w-9 h-9 cursor-pointer transition shadow-inner group flex-shrink-0" aria-label="Toggle Navigation Menu">
+          <span class="block w-4 h-0.5 bg-slate-300 group-hover:bg-sky-400 rounded-full transition-transform"></span>
+          <span class="block w-4 h-0.5 bg-slate-300 group-hover:bg-sky-400 rounded-full transition-transform"></span>
+          <span class="block w-4 h-0.5 bg-slate-300 group-hover:bg-sky-400 rounded-full transition-transform"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Navigation Drawer Overlay Menu -->
+    <div class="mobile-drawer fixed inset-y-0 right-0 w-80 sm:w-96 bg-slate-950/95 border-l border-slate-800 backdrop-blur-xl p-6 shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col justify-between" id="mobile-drawer">
+      <div>
+        <div class="drawer-header flex items-center justify-end pb-4 border-b border-slate-800/80 mb-5">
+          <button id="drawer-close" class="drawer-close p-1.5 text-slate-400 hover:text-white text-lg rounded-lg hover:bg-slate-800/50 transition cursor-pointer" aria-label="Close Navigation Menu"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="drawer-links flex flex-col space-y-1 max-h-[75vh] overflow-y-auto pr-2">
+          <a href="#home" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_home"><span>Home</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#about" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_about"><span>About</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#journey" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_journey"><span>Journey</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#skills" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_skills"><span>Skills</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#dsa" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_dsa"><span>Problem Solving</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#projects" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_projects"><span>Projects</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#experience" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_experience"><span>Experience</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#github" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_github"><span>GitHub</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#achievements" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_achievements"><span>Certificates</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+          <a href="#internship" class="drawer-link text-sky-400 font-bold py-2 transition-colors flex items-center justify-between" data-i18n="nav_internship"><span>Internship</span> <i class="fa-solid fa-user-check text-xs"></i></a>
+          <a href="#contact" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_contact"><span>Contact</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+        </div>
+      </div>
+
+      <div class="drawer-footer pt-4 border-t border-slate-800">
+        <p class="drawer-quote text-[11px] text-slate-500 italic text-center font-mono">"Building reliable, scalable, and meaningful solutions."</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section min-h-[calc(100vh-5rem)] flex flex-col justify-center py-16 lg:py-24 relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          <!-- Hero Text & CTA Content -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            
+            <!-- Recruiter Status Badge -->
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-semibold font-mono tracking-wide shadow-lg shadow-blue-500/10">
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span data-i18n="hero_status_badge">AVAILABLE FOR SOFTWARE ENGINEERING INTERNSHIP</span>
+            </div>
+
+            <!-- Name Title (Crisp gradient in both Dark & Light themes) -->
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-heading tracking-tight text-white leading-tight">
+              <span class="text-slate-400 text-2xl sm:text-3xl block font-normal mb-1" data-i18n="hero_greeting">Halo, Saya</span>
+              <span class="hero-name-gradient bg-gradient-to-r from-white via-slate-100 to-sky-400 bg-clip-text text-transparent">Musyafa Anasrullah</span>
+            </h1>
+
+            <!-- Dynamic Role Subtitle & Typing Effect -->
+            <div class="flex items-center justify-center lg:justify-start font-mono text-xl sm:text-2xl text-sky-400 font-semibold h-9">
+              <span class="text-blue-500 mr-2">&lt;/&gt;</span>
+              <span id="typing-text" class="typing-text"></span><span class="typing-cursor animate-pulse text-sky-400">|</span>
+            </div>
+
+            <!-- Slogan & Sub-slogan -->
+            <div class="space-y-2 max-w-2xl mx-auto lg:mx-0">
+              <p class="text-lg sm:text-xl font-medium text-slate-200 italic" data-i18n="hero_full_slogan">
+                "Building reliable, scalable, and meaningful digital solutions."
+              </p>
+              <p class="text-sm sm:text-base text-slate-400 leading-relaxed" data-i18n="hero_sub_slogan">
+                Software Engineering Student at UBSI. Focused on web development, backend systems, database architecture, and data structures & algorithms.
+              </p>
+            </div>
+
+            <!-- Hero Action Buttons -->
+            <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-2">
+              <a href="#projects" class="px-4 py-2.5 rounded-xl font-semibold bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-lg shadow-sky-500/20 hover:shadow-sky-500/35 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-cubes"></i>
+                <span data-i18n="btn_view_projects">VIEW MY PROJECTS</span>
+              </a>
+              <a href="#internship" class="px-4 py-2.5 rounded-xl font-semibold bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-100 hover:border-sky-500/50 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-user-check text-sky-400"></i>
+                <span data-i18n="btn_internship_app">INTERNSHIP APPLICATION</span>
+              </a>
+              <!-- Direct Download CV SE Button -->
+              <a href="assets/Musyafa-Anasrullah-CV-SE.docx" download="Musyafa-Anasrullah-CV-SE.docx" target="_blank" rel="noopener noreferrer" class="px-4 py-2.5 rounded-xl font-semibold bg-slate-900/80 hover:bg-slate-800 border border-slate-700 text-slate-200 hover:text-white hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-1.5 text-xs">
+                <i class="fa-solid fa-file-arrow-down text-emerald-400"></i>
+                <span data-i18n="btn_download_cv">DOWNLOAD RESUME</span>
+              </a>
+            </div>
+
+            <!-- Social Links Bar -->
+            <div class="pt-4 flex items-center justify-center lg:justify-start gap-3">
+              <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-sky-400 hover:border-sky-500/50 hover:scale-110 transition"><i class="fa-brands fa-github text-base"></i></a>
+              <a href="https://www.linkedin.com/in/musyafa-anasrullah-674368309/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-sky-400 hover:border-sky-500/50 hover:scale-110 transition"><i class="fa-brands fa-linkedin-in text-base"></i></a>
+              <a href="mailto:musyafaanasrullah4@gmail.com" aria-label="Email" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-sky-400 hover:border-sky-500/50 hover:scale-110 transition"><i class="fa-solid fa-envelope text-base"></i></a>
+              <a href="https://wa.me/628139707965" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-slate-300 hover:text-sky-400 hover:border-sky-500/50 hover:scale-110 transition"><i class="fa-brands fa-whatsapp text-base"></i></a>
+            </div>
+          </div>
+
+          <!-- Hero Avatar Visual & Badges -->
+          <div class="lg:col-span-5 flex justify-center">
+            <div class="relative w-72 sm:w-80 lg:w-96 aspect-square">
+              <div class="absolute -inset-4 rounded-full bg-gradient-to-tr from-blue-600/30 to-sky-400/20 blur-2xl animate-pulse"></div>
+              
+              <div class="relative w-full h-full rounded-3xl bg-slate-900 border-2 border-slate-800 p-3 shadow-2xl overflow-hidden group">
+                <img src="assets/images/foto profil/foto profil 1.jpg" alt="Musyafa Anasrullah Profile" class="w-full h-full object-cover rounded-2xl filter contrast-105 group-hover:scale-105 transition-transform duration-500" />
+              </div>
+
+              <!-- Floating Tech Badge 1 (Software Engineering Student) -->
+              <div class="absolute -top-4 -right-4 bg-slate-900/90 border border-slate-800 backdrop-blur-md p-3.5 rounded-2xl shadow-xl flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 text-lg">
+                  <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div>
+                  <strong class="block text-xs text-white">Software Engineering Student</strong>
+                  <span class="text-[10px] text-slate-400 font-mono">UBSI Margonda</span>
+                </div>
+              </div>
+
+              <!-- Floating Tech Badge 2 (React • Node.js • SQL) -->
+              <div class="absolute -bottom-4 -left-4 bg-slate-900/90 border border-slate-800 backdrop-blur-md p-3.5 rounded-2xl shadow-xl flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg">
+                  <i class="fa-solid fa-code"></i>
+                </div>
+                <div>
+                  <strong class="block text-xs text-white">Full-Stack Tech</strong>
+                  <span class="text-[10px] text-slate-400 font-mono">React • Node.js • SQL</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HERO TECH STACK BAR (CENTERED: HTML to Cloud) -->
+        <div class="mt-16 pt-8 border-t border-slate-800/80 text-center">
+          <span class="text-xs uppercase tracking-widest text-slate-400 font-mono font-semibold block mb-4" data-i18n="hero_tech_stack_lbl">ENGINEERING TECH STACK</span>
+          <div class="flex flex-wrap items-center justify-center gap-2.5 max-w-4xl mx-auto">
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-html5 text-orange-500 mr-1.5"></i>HTML5</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-css3-alt text-blue-500 mr-1.5"></i>CSS3</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-js text-yellow-400 mr-1.5"></i>JavaScript</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-solid fa-code text-blue-400 mr-1.5"></i>TypeScript</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-react text-sky-400 mr-1.5"></i>React</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-solid fa-wind text-teal-400 mr-1.5"></i>Tailwind CSS</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-node-js text-emerald-400 mr-1.5"></i>Node.js</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-solid fa-network-wired text-slate-300 mr-1.5"></i>Express.js</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-solid fa-database text-blue-400 mr-1.5"></i>SQL</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-solid fa-database text-indigo-400 mr-1.5"></i>PostgreSQL</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-solid fa-database text-blue-500 mr-1.5"></i>MySQL</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-git-alt text-orange-600 mr-1.5"></i>Git</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-github text-slate-200 mr-1.5"></i>GitHub</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-docker text-sky-500 mr-1.5"></i>Docker</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-brands fa-linux text-yellow-400 mr-1.5"></i>Linux</span>
+            <span class="px-3.5 py-1.5 rounded-xl bg-slate-900/80 border border-slate-800 text-slate-300 text-xs font-mono font-medium hover:border-sky-500/50 hover:text-sky-300 transition"><i class="fa-solid fa-arrows-spin text-emerald-400 mr-1.5"></i>CI/CD</span>
+          </div>
+        </div>
+
+        <!-- Quick Stats Counter Grid -->
+        <div class="mt-12">
+          <div class="stats-grid grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="stat-card bg-slate-900/60 border border-slate-800 p-5 rounded-2xl backdrop-blur-md text-center hover:border-sky-500/40 transition">
+              <div class="stat-icon text-sky-400 text-xl mb-2"><i class="fa-solid fa-code-commit"></i></div>
+              <div class="stat-number text-3xl font-extrabold text-white font-mono" data-target="20">0<span>+</span></div>
+              <div class="stat-label text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_projects">Projects Completed</div>
+            </div>
+            <div class="stat-card bg-slate-900/60 border border-slate-800 p-5 rounded-2xl backdrop-blur-md text-center hover:border-sky-500/40 transition">
+              <div class="stat-icon text-sky-400 text-xl mb-2"><i class="fa-solid fa-certificate"></i></div>
+              <div class="stat-number text-3xl font-extrabold text-white font-mono" data-target="16">0<span>+</span></div>
+              <div class="stat-label text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_certificates">Technical Certificates</div>
+            </div>
+            <div class="stat-card bg-slate-900/60 border border-slate-800 p-5 rounded-2xl backdrop-blur-md text-center hover:border-sky-500/40 transition">
+              <div class="stat-icon text-sky-400 text-xl mb-2"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="stat-number text-3xl font-extrabold text-white font-mono" data-target="5">0<span>+</span></div>
+              <div class="stat-label text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_years">Years Learning</div>
+            </div>
+            <div class="stat-card bg-slate-900/60 border border-slate-800 p-5 rounded-2xl backdrop-blur-md text-center hover:border-sky-500/40 transition">
+              <div class="stat-icon text-sky-400 text-xl mb-2"><i class="fa-brands fa-github-alt"></i></div>
+              <div class="stat-number text-3xl font-extrabold text-white font-mono" data-target="100">0<span>+</span></div>
+              <div class="stat-label text-xs text-slate-400 mt-1 font-medium" data-i18n="stat_contrib">GitHub Contributions</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="section py-20 bg-slate-950/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-16">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="about_subtitle">TENTANG SAYA</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="about_title">Bio, Vision, Mission &amp; Engineering Focus</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Left Column: Personal Biodata Card -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="biodata-card bg-slate-900/70 border border-slate-800/90 rounded-2xl p-6 backdrop-blur-xl shadow-xl">
+              <h3 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <i class="fa-solid fa-id-card text-sky-400"></i>
+                <span data-i18n="biodata_header">Biodata Diri</span>
+              </h3>
+              
+              <ul class="space-y-4 text-sm">
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-user text-sky-400 mt-1"></i>
+                  <div>
+                    <span class="text-xs text-slate-400 block" data-i18n="bio_name_lbl">Nama Lengkap</span>
+                    <span class="text-slate-100 font-semibold">Musyafa Anasrullah</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-cake-candles text-sky-400 mt-1"></i>
+                  <div>
+                    <span class="text-xs text-slate-400 block" data-i18n="bio_age_lbl">Umur</span>
+                    <span class="text-slate-100 font-semibold" data-i18n="bio_age_val">22 Tahun</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-location-dot text-sky-400 mt-1"></i>
+                  <div>
+                    <span class="text-xs text-slate-400 block" data-i18n="bio_loc_lbl">Domisili</span>
+                    <span class="text-slate-100 font-semibold" data-i18n="bio_loc_val">Bogor, Jawa Barat</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-university text-sky-400 mt-1"></i>
+                  <div>
+                    <span class="text-xs text-slate-400 block" data-i18n="bio_univ_lbl">Perguruan Tinggi</span>
+                    <span class="text-slate-100 font-semibold">Universitas Bina Sarana Informatika (UBSI Margonda Depok)</span>
+                  </div>
+                </li>
+                <li class="flex items-start gap-3">
+                  <i class="fa-solid fa-book-bookmark text-sky-400 mt-1"></i>
+                  <div>
+                    <span class="text-xs text-slate-400 block" data-i18n="bio_major_lbl">Jurusan</span>
+                    <span class="text-slate-100 font-semibold" data-i18n="bio_major_val">Rekayasa Perangkat Lunak (Software Engineering)</span>
+                  </div>
+                </li>
+              </ul>
+
+              <!-- CURRENT FOCUS BADGES -->
+              <div class="mt-8 pt-6 border-t border-slate-800">
+                <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-sky-400 mb-3" data-i18n="current_focus_lbl">CURRENT FOCUS</h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-mono font-medium">Software Engineering</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-mono font-medium">Web Development</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-mono font-medium">Backend Development</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-mono font-medium">Data Structures &amp; Algorithms</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-mono font-medium">Git &amp; GitHub</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-blue-950/80 border border-blue-500/40 text-blue-300 text-xs font-mono font-medium">Cloud &amp; DevOps</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Exact Story & Engineering Philosophy -->
+          <div class="lg:col-span-7 space-y-6">
+            <div class="story-panel bg-slate-900/70 border border-slate-800/90 rounded-2xl p-6 sm:p-8 backdrop-blur-xl shadow-xl space-y-4">
+              <h3 class="text-xl font-bold text-white flex items-center gap-2 mb-4">
+                <i class="fa-solid fa-compass text-sky-400"></i>
+                <span data-i18n="about_story_header">Perjalanan &amp; Filosofi Hidup</span>
+              </h3>
+
+              <!-- EXACT REPLACEMENT TEXT -->
+              <p class="text-sm text-slate-200 leading-relaxed text-justify sm:text-left" data-i18n="about_story_p1">
+                Halo, saya Musyafa Anasrullah. Fokus utama saya adalah Software Engineering—menciptakan aplikasi dan solusi digital yang tangguh, efisien, dan skala besar. Sebagai mahasiswa Rekayasa Perangkat Lunak, saya terus mendalami ekosistem pengembangan modern, mencakup frontend, backend, database, hingga software architecture. Saya percaya bahwa perangkat lunak terbaik lahir dari clean code dan pemecahan masalah yang sistematis. Karakter saya dibentuk oleh kedisiplinan seorang fighter dan daya kreatif seorang content creator, yang membantu saya dalam memimpin tim, menyampaikan ide-ide teknis secara jelas, serta terus beradaptasi dengan perkembangan teknologi.
+              </p>
+
+              <!-- Vision & Mission Grid -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                <div class="bg-slate-950/60 border border-slate-800/80 p-4 rounded-xl">
+                  <div class="text-sky-400 text-lg mb-1"><i class="fa-solid fa-eye"></i></div>
+                  <h4 class="text-sm font-bold text-white mb-1" data-i18n="vm_vision_title">Vision</h4>
+                  <p class="text-xs text-slate-400 leading-relaxed" data-i18n="vm_vision_desc">Menjadi seorang Software Engineer profesional yang mampu merancang dan mengeksekusi sistem aplikasi berskala besar, efisien, dan memberikan dampak nyata bagi pengguna.</p>
+                </div>
+                <div class="bg-slate-950/60 border border-slate-800/80 p-4 rounded-xl">
+                  <div class="text-sky-400 text-lg mb-1"><i class="fa-solid fa-bullseye"></i></div>
+                  <h4 class="text-sm font-bold text-white mb-1" data-i18n="vm_mission_title">Mission</h4>
+                  <p class="text-xs text-slate-400 leading-relaxed" data-i18n="vm_mission_desc">Terus memperdalam fundamental rekayasa perangkat lunak, berkontribusi dalam tim engineering produk, dan menciptakan aplikasi berkualitas tinggi.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOFTWARE ENGINEERING ROADMAP SECTION -->
+    <section id="journey" class="section py-20 bg-slate-950 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-16">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="journey_subtitle">ROADMAP BELAJAR</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="journey_title">Software Engineering Journey</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-2xl mx-auto" data-i18n="journey_desc">Tahapan visual dan roadmap pembelajaran teknologi yang saya tempuh menuju Software Engineering Internship.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Roadmap Timeline Grid (10 Stages) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+          
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">01</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-solid fa-code"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step1_title">WEB FUNDAMENTALS</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">HTML • CSS • JavaScript</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step1_desc">Penguasaan struktur web semantik, styling responsif, dan manipulasi DOM menggunakan JavaScript vanilla.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">Mastered</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">02</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-brands fa-react"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step2_title">MODERN FRONTEND</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">React</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step2_desc">Pengembangan UI berbasis komponen reusable, state management dengan React Hooks, dan SPA routing.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">Mastered</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">03</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-solid fa-terminal"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step3_title">PROGRAMMING</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">JavaScript • Java • OOP</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step3_desc">Pemahaman logika pemrograman tingkat dasar hingga lanjut, Object-Oriented Programming (OOP), dan manipulasi data.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">Active</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">04</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-solid fa-brain"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step4_title">COMPUTER SCIENCE</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">DSA &amp; Problem Solving</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step4_desc">Studi mendalam mengenai Struktur Data (Arrays, Lists, Trees) dan Algoritma (Sorting, Searching, Complexity Big-O).</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-[10px] font-mono">Learning</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">05</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-brands fa-git-alt"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step5_title">ENGINEERING TOOLS</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">Git • GitHub</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step5_desc">Manajemen versi kode, branching strategy, Pull Requests, code review, dan kolaborasi tim software engineering.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">Mastered</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">06</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-solid fa-server"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step6_title">BACKEND</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">REST API • Node.js • Express.js</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step6_desc">Perancangan arsitektur server, API endpoints, otentikasi JWT, middleware, dan arsitektur microservices.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-[10px] font-mono">Active</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">07</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-solid fa-database"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step7_title">DATA &amp; DATABASES</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">MySQL • PostgreSQL</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step7_desc">Perancangan database relasional dan NoSQL, optimasi query SQL, indexing, serta integritas data.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-blue-500/20 text-blue-400 text-[10px] font-mono">Active</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">08</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-brands fa-docker"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step8_title">INFRASTRUCTURE</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">Docker • Cloud • CI/CD</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step8_desc">Containerization aplikasi dengan Docker, deployment dasar di platform cloud, dan otomatisasi CI/CD pipelines.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-amber-500/20 text-amber-400 text-[10px] font-mono">Learning</span>
+          </div>
+
+          <div class="bg-slate-900/60 border border-slate-800 p-5 rounded-2xl relative hover:border-sky-500/50 transition group">
+            <span class="text-2xl font-black font-mono text-slate-700 group-hover:text-sky-400 transition">09</span>
+            <div class="my-3 text-sky-400 text-xl"><i class="fa-solid fa-layer-group"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step9_title">PRODUCTION PROJECTS</h3>
+            <p class="text-xs font-mono text-sky-400 mt-1">Real-world Software</p>
+            <p class="text-xs text-slate-400 mt-2 leading-relaxed" data-i18n="j_step9_desc">Membangun proyek aplikasi riil berstandar industri dengan arsitektur bersih dan nilai keteknikan nyata.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-mono">Building</span>
+          </div>
+
+          <!-- Stage 10 (Target SE Internship) -->
+          <div class="journey-stage-10 bg-gradient-to-br from-blue-950/80 to-slate-900 border border-blue-500/40 p-5 rounded-2xl relative transition group shadow-lg shadow-blue-500/10">
+            <span class="text-2xl font-black font-mono text-blue-500">10</span>
+            <div class="my-3 text-emerald-400 text-xl"><i class="fa-solid fa-user-check"></i></div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider" data-i18n="j_step10_title">INTERNSHIP</h3>
+            <p class="text-xs font-mono text-emerald-400 mt-1">SE Intern Opportunities</p>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed" data-i18n="j_step10_desc">Siap berkontribusi dalam tim Software Engineering profesional pada industri teknologi dan startup.</p>
+            <span class="inline-block mt-3 px-2 py-0.5 rounded bg-emerald-500 text-slate-950 text-[10px] font-mono font-bold">READY</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="section py-20 bg-slate-950/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+    <!-- SKILLS & TECH STACK SECTION -->
+    <section id="skills" class="section py-20 bg-slate-950/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-16">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="skills_subtitle">KEAHLIAN &amp; TECH STACK</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="skills_title">Skills &amp; Tech Stack</h2>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- 6 Categorized Skills Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- Category 1: PROGRAMMING & COMPUTER SCIENCE -->
+          <div class="skill-card bg-slate-900/60 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/40 transition backdrop-blur-md">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 text-lg">
+                <i class="fa-solid fa-code"></i>
+              </div>
+              <h3 class="text-sm font-bold text-white font-heading tracking-wide uppercase">PROGRAMMING &amp; COMPUTER SCIENCE</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-js text-yellow-400"></i> JavaScript</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-brain text-sky-400"></i> Data Structures &amp; Algorithms</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-cubes text-blue-400"></i> Object-Oriented Programming</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-puzzle-piece text-emerald-400"></i> Problem Solving</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-clock-rotate-left text-amber-400"></i> Time &amp; Space Complexity</span>
+            </div>
+          </div>
+
+          <!-- Category 2: SOFTWARE ENGINEERING -->
+          <div class="skill-card bg-slate-900/60 border border-slate-800 p-6 rounded-2xl hover:border-purple-500/40 transition backdrop-blur-md">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg">
+                <i class="fa-solid fa-gears"></i>
+              </div>
+              <h3 class="text-sm font-bold text-white font-heading tracking-wide uppercase">SOFTWARE ENGINEERING</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-git-alt text-orange-500"></i> Git</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-github text-slate-200"></i> GitHub</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-wand-magic-sparkles text-emerald-400"></i> Clean Code</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-bug text-rose-400"></i> Debugging</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-vial-circle-check text-cyan-400"></i> Unit Testing</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-magnifying-glass-chart text-teal-400"></i> Code Review</span>
+            </div>
+          </div>
+
+          <!-- Category 3: FRONTEND ENGINEERING -->
+          <div class="skill-card bg-slate-900/60 border border-slate-800 p-6 rounded-2xl hover:border-sky-500/40 transition backdrop-blur-md">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-sky-600/20 border border-sky-500/30 flex items-center justify-center text-sky-400 text-lg">
+                <i class="fa-solid fa-desktop"></i>
+              </div>
+              <h3 class="text-sm font-bold text-white font-heading tracking-wide uppercase">FRONTEND ENGINEERING</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-html5 text-orange-500"></i> HTML5</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-css3-alt text-blue-500"></i> CSS3</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-js text-yellow-400"></i> JavaScript</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-code text-blue-400"></i> TypeScript</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-react text-sky-400"></i> React</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-wind text-teal-400"></i> Tailwind CSS</span>
+            </div>
+          </div>
+
+          <!-- Category 4: BACKEND & API ENGINEERING -->
+          <div class="skill-card bg-slate-900/60 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/40 transition backdrop-blur-md">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-lg">
+                <i class="fa-solid fa-server"></i>
+              </div>
+              <h3 class="text-sm font-bold text-white font-heading tracking-wide uppercase">BACKEND &amp; API ENGINEERING</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-node-js text-emerald-400"></i> Node.js</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-network-wired text-slate-300"></i> Express.js</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-plug text-purple-400"></i> REST API</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-diagram-project text-sky-400"></i> API Design</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-shield-halved text-amber-400"></i> Authentication</span>
+            </div>
+          </div>
+
+          <!-- Category 5: DATABASE & DATA ENGINEERING -->
+          <div class="skill-card bg-slate-900/60 border border-slate-800 p-6 rounded-2xl hover:border-indigo-500/40 transition backdrop-blur-md">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-indigo-600/20 border border-indigo-500/30 flex items-center justify-center text-indigo-400 text-lg">
+                <i class="fa-solid fa-database"></i>
+              </div>
+              <h3 class="text-sm font-bold text-white font-heading tracking-wide uppercase">DATABASE &amp; DATA ENGINEERING</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-database text-blue-400"></i> SQL</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-database text-indigo-400"></i> PostgreSQL</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-database text-blue-500"></i> MySQL</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-table-columns text-emerald-400"></i> Database Design</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-sitemap text-cyan-400"></i> Data Modeling</span>
+            </div>
+          </div>
+
+          <!-- Category 6: CLOUD, DEVOPS & SYSTEMS -->
+          <div class="skill-card bg-slate-900/60 border border-slate-800 p-6 rounded-2xl hover:border-amber-500/40 transition backdrop-blur-md">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-600/20 border border-amber-500/30 flex items-center justify-center text-amber-400 text-lg">
+                <i class="fa-solid fa-cloud"></i>
+              </div>
+              <h3 class="text-sm font-bold text-white font-heading tracking-wide uppercase">CLOUD, DEVOPS &amp; SYSTEMS</h3>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-linux text-yellow-400"></i> Linux</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-brands fa-docker text-sky-400"></i> Docker</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-arrows-spin text-emerald-400"></i> CI/CD</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-play text-blue-400"></i> GitHub Actions</span>
+              <span class="px-3 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-200 text-xs font-mono flex items-center gap-1.5"><i class="fa-solid fa-network-wired text-teal-400"></i> Networking Fundamentals</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROBLEM SOLVING & ALGORITHMIC PRACTICE SECTION -->
+    <section id="dsa" class="section py-20 bg-slate-950 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-16">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="dsa_subtitle">ALGORITMA &amp; PEMECAHAN MASALAH</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="dsa_title">Problem Solving &amp; Algorithmic Practice</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-2xl mx-auto" data-i18n="dsa_desc">Proven track record in algorithmic efficiency, code optimization, and complex data structure implementation.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- LeetCode Problem Solved Showcase Card -->
+        <div class="max-w-2xl mx-auto">
+          
+          <!-- LeetCode Profile Card -->
+          <div class="bg-slate-900/70 border border-slate-800 p-6 sm:p-8 rounded-3xl backdrop-blur-xl flex flex-col justify-between hover:border-amber-500/40 transition group shadow-2xl">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="w-12 h-12 rounded-2xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-amber-400 text-2xl">
+                  <i class="fa-solid fa-code font-bold"></i>
+                </div>
+                <span class="px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-400 text-[10px] font-mono font-bold">LEETCODE</span>
+              </div>
+
+              <div>
+                <h3 class="text-xl font-bold text-white font-heading" data-i18n="leetcode_card_title">LeetCode Problem Solved</h3>
+                <p class="text-xs text-slate-400 mt-1" data-i18n="leetcode_card_desc">Latihan kontinu algoritma &amp; struktur data standar industri.</p>
+              </div>
+
+              <div class="space-y-3 pt-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-slate-400">Total Solved</span>
+                  <span class="font-mono font-extrabold text-white text-base">150+ Problems</span>
+                </div>
+                <div class="w-full bg-slate-950 rounded-full h-2.5 overflow-hidden flex">
+                  <div class="bg-emerald-400 h-full w-[40%]" title="Easy 60+"></div>
+                  <div class="bg-amber-400 h-full w-[45%]" title="Medium 75+"></div>
+                  <div class="bg-rose-500 h-full w-[15%]" title="Hard 15+"></div>
+                </div>
+                <div class="grid grid-cols-3 gap-3 text-[11px] font-mono text-center pt-1">
+                  <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800"><span class="text-emerald-400 font-bold text-sm block">60+</span> <span class="text-slate-400 text-[10px]">Easy</span></div>
+                  <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800"><span class="text-amber-400 font-bold text-sm block">75+</span> <span class="text-slate-400 text-[10px]">Medium</span></div>
+                  <div class="bg-slate-950 p-2.5 rounded-xl border border-slate-800"><span class="text-rose-400 font-bold text-sm block">15+</span> <span class="text-slate-400 text-[10px]">Hard</span></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-6 border-t border-slate-800/80 mt-6">
+              <a href="https://leetcode.com/u/musyafaanasrullah/" target="_blank" rel="noopener noreferrer" class="w-full py-3 rounded-xl font-mono text-xs font-semibold bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 transition flex items-center justify-center gap-2">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                <span data-i18n="leetcode_btn">View LeetCode Profile</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="section py-20 bg-slate-950 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-12">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="projects_subtitle">PORTOFOLIO KARYA</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="projects_title">Selected Engineering Projects</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-xl mx-auto" data-i18n="projects_desc">Proyek aplikasi rekayasa perangkat lunak yang menampilkan nilai teknis, pemecahan masalah, dan kebersihan arsitektur.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Project Category Filters -->
+        <div class="project-filters flex flex-wrap items-center justify-center gap-2 mb-12">
+          <button class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition" data-filter="all" data-i18n="filter_all">All</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition" data-filter="web" data-i18n="filter_web">Web Dev</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition" data-filter="dashboard" data-i18n="filter_dashboard">Dashboard</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition" data-filter="api" data-i18n="filter_api">API</button>
+          <button class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold bg-slate-900 border border-slate-800 text-slate-300 hover:text-white transition" data-filter="ui" data-i18n="filter_ui">UI Design</button>
+        </div>
+
+        <!-- Project Cards Grid -->
+        <div class="projects-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Project 1: Personal Portfolio -->
+          <div class="project-card bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden backdrop-blur-md flex flex-col justify-between hover:border-sky-500/40 transition group" data-category="web ui">
+            <div>
+              <div class="project-thumb relative h-48 overflow-hidden bg-slate-950">
+                <img src="assets/images/background project/Personal Portofolio.png" alt="Personal Portfolio Preview" class="project-thumb-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="project-year absolute top-3 left-3 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-md text-[10px] font-mono text-slate-300">2026</span>
+                <div class="project-badge status-live absolute top-3 right-3 bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold">Live</div>
+              </div>
+              <div class="project-body p-6 space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 text-[10px] font-mono">Frontend</span>
+                  <span class="px-2.5 py-0.5 rounded bg-sky-950 text-sky-300 text-[10px] font-mono">Full Stack</span>
+                  <span class="px-2.5 py-0.5 rounded bg-purple-950 text-purple-300 text-[10px] font-mono">Software Eng</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Personal Portfolio Website</h3>
+                
+                <div class="space-y-1.5 text-xs text-slate-300">
+                  <p><strong class="text-amber-400 font-semibold">PROBLEM:</strong> Kebutuhan platform portfolio personal berstandar recruiter yang cepat dan responsive.</p>
+                  <p><strong class="text-emerald-400 font-semibold">SOLUTION:</strong> Mengembangkan SPA modern berbasis Tailwind CSS &amp; JS dengan custom i18n &amp; particle background.</p>
+                </div>
+
+                <div class="pt-2">
+                  <span class="text-[10px] font-mono text-slate-400 block mb-1">ENGINEERING FOCUS:</span>
+                  <div class="flex flex-wrap gap-1 text-[11px] font-mono text-slate-300">
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Clean DOM</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">i18n Engine</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Canvas API</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Responsive UI</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
+              <a href="https://github.com/MusyafaAnasrullah/portofoliomusyafaanasrullah" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:text-white flex items-center gap-1 font-mono"><i class="fa-brands fa-github"></i> Code</a>
+              <button type="button" class="proj-link demo-trigger text-xs text-sky-400 hover:text-sky-300 font-mono font-semibold flex items-center gap-1" data-proj="p1"><i class="fa-solid fa-arrow-up-right-from-square"></i> Engineering Details</button>
+            </div>
+          </div>
+
+          <!-- Project 2: Portfolio SE Platform -->
+          <div class="project-card bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden backdrop-blur-md flex flex-col justify-between hover:border-sky-500/40 transition group" data-category="web dashboard">
+            <div>
+              <div class="project-thumb relative h-48 overflow-hidden bg-slate-950">
+                <img src="assets/images/background project/portofolio SE.png" alt="Portfolio Software Engineering Platform Preview" class="project-thumb-img w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <span class="project-year absolute top-3 left-3 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-md text-[10px] font-mono text-slate-300">2026</span>
+                <div class="project-badge status-progress absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold">In Progress</div>
+              </div>
+              <div class="project-body p-6 space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 text-[10px] font-mono">Full Stack</span>
+                  <span class="px-2.5 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-mono">Backend</span>
+                  <span class="px-2.5 py-0.5 rounded bg-purple-950 text-purple-300 text-[10px] font-mono">Software Eng</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Portfolio Software Engineering Platform</h3>
+                
+                <div class="space-y-1.5 text-xs text-slate-300">
+                  <p><strong class="text-amber-400 font-semibold">PROBLEM:</strong> Showcase proyek statis kaku dan sulit mengelola metadata proyek berskala besar.</p>
+                  <p><strong class="text-emerald-400 font-semibold">SOLUTION:</strong> Platform fullstack React + Node.js dengan REST API &amp; sistem filtering terpusat.</p>
+                </div>
+
+                <div class="pt-2">
+                  <span class="text-[10px] font-mono text-slate-400 block mb-1">ENGINEERING FOCUS:</span>
+                  <div class="flex flex-wrap gap-1 text-[11px] font-mono text-slate-300">
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">REST API</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">CRUD</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">React Hooks</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
+              <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:text-white flex items-center gap-1 font-mono"><i class="fa-brands fa-github"></i> Code</a>
+              <button type="button" class="proj-link demo-trigger text-xs text-sky-400 hover:text-sky-300 font-mono font-semibold flex items-center gap-1" data-proj="p2"><i class="fa-solid fa-arrow-up-right-from-square"></i> Engineering Details</button>
+            </div>
+          </div>
+
+          <!-- Project 3: Finance Tracker -->
+          <div class="project-card bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden backdrop-blur-md flex flex-col justify-between hover:border-sky-500/40 transition group" data-category="web dashboard api">
+            <div>
+              <div class="project-thumb relative h-48 overflow-hidden bg-slate-950 flex items-center justify-center">
+                <i class="fa-solid fa-chart-line text-4xl text-sky-500/40"></i>
+                <span class="project-year absolute top-3 left-3 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-md text-[10px] font-mono text-slate-300">2025</span>
+                <div class="project-badge status-progress absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold">In Progress</div>
+              </div>
+              <div class="project-body p-6 space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 text-[10px] font-mono">Full Stack</span>
+                  <span class="px-2.5 py-0.5 rounded bg-indigo-950 text-indigo-300 text-[10px] font-mono">Database</span>
+                  <span class="px-2.5 py-0.5 rounded bg-teal-950 text-teal-300 text-[10px] font-mono">API</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Finance Tracker &amp; Analytics</h3>
+                
+                <div class="space-y-1.5 text-xs text-slate-300">
+                  <p><strong class="text-amber-400 font-semibold">PROBLEM:</strong> Pencatatan transaksi manual yang tidak terstruktur dan sulit dievaluasi.</p>
+                  <p><strong class="text-emerald-400 font-semibold">SOLUTION:</strong> Dashboard Next.js &amp; PostgreSQL dengan kalkulasi agregasi otomatis &amp; visualizer.</p>
+                </div>
+
+                <div class="pt-2">
+                  <span class="text-[10px] font-mono text-slate-400 block mb-1">ENGINEERING FOCUS:</span>
+                  <div class="flex flex-wrap gap-1 text-[11px] font-mono text-slate-300">
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">PostgreSQL</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Prisma ORM</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Next.js SSR</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Chart.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
+              <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:text-white flex items-center gap-1 font-mono"><i class="fa-brands fa-github"></i> Code</a>
+              <button type="button" class="proj-link demo-trigger text-xs text-sky-400 hover:text-sky-300 font-mono font-semibold flex items-center gap-1" data-proj="p3"><i class="fa-solid fa-arrow-up-right-from-square"></i> Engineering Details</button>
+            </div>
+          </div>
+
+          <!-- Project 4: Enterprise Admin Dashboard -->
+          <div class="project-card bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden backdrop-blur-md flex flex-col justify-between hover:border-sky-500/40 transition group" data-category="web dashboard">
+            <div>
+              <div class="project-thumb relative h-48 overflow-hidden bg-slate-950 flex items-center justify-center">
+                <i class="fa-solid fa-gauge-high text-4xl text-sky-500/40"></i>
+                <span class="project-year absolute top-3 left-3 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-md text-[10px] font-mono text-slate-300">2025</span>
+                <div class="project-badge status-progress absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold">In Progress</div>
+              </div>
+              <div class="project-body p-6 space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-mono">Backend</span>
+                  <span class="px-2.5 py-0.5 rounded bg-purple-950 text-purple-300 text-[10px] font-mono">Auth / RBAC</span>
+                  <span class="px-2.5 py-0.5 rounded bg-indigo-950 text-indigo-300 text-[10px] font-mono">Database</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Enterprise Admin Dashboard</h3>
+                
+                <div class="space-y-1.5 text-xs text-slate-300">
+                  <p><strong class="text-amber-400 font-semibold">PROBLEM:</strong> Manajemen pengguna internal yang tidak aman dan tanpa audit log aktivitas.</p>
+                  <p><strong class="text-emerald-400 font-semibold">SOLUTION:</strong> Portal admin Vue 3 + Laravel REST API dengan sistem otentikasi RBAC granular.</p>
+                </div>
+
+                <div class="pt-2">
+                  <span class="text-[10px] font-mono text-slate-400 block mb-1">ENGINEERING FOCUS:</span>
+                  <div class="flex flex-wrap gap-1 text-[11px] font-mono text-slate-300">
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">RBAC System</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Laravel Sanctum</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Audit Log</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">MySQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
+              <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:text-white flex items-center gap-1 font-mono"><i class="fa-brands fa-github"></i> Code</a>
+              <button type="button" class="proj-link demo-trigger text-xs text-sky-400 hover:text-sky-300 font-mono font-semibold flex items-center gap-1" data-proj="p4"><i class="fa-solid fa-arrow-up-right-from-square"></i> Engineering Details</button>
+            </div>
+          </div>
+
+          <!-- Project 5: Inventory Management System -->
+          <div class="project-card bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden backdrop-blur-md flex flex-col justify-between hover:border-sky-500/40 transition group" data-category="web dashboard api">
+            <div>
+              <div class="project-thumb relative h-48 overflow-hidden bg-slate-950 flex items-center justify-center">
+                <i class="fa-solid fa-boxes-stacked text-4xl text-sky-500/40"></i>
+                <span class="project-year absolute top-3 left-3 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-md text-[10px] font-mono text-slate-300">2025</span>
+                <div class="project-badge status-progress absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold">In Progress</div>
+              </div>
+              <div class="project-body p-6 space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 text-[10px] font-mono">Full Stack</span>
+                  <span class="px-2.5 py-0.5 rounded bg-cyan-950 text-cyan-300 text-[10px] font-mono">Docker</span>
+                  <span class="px-2.5 py-0.5 rounded bg-teal-950 text-teal-300 text-[10px] font-mono">API</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Inventory Management System</h3>
+                
+                <div class="space-y-1.5 text-xs text-slate-300">
+                  <p><strong class="text-amber-400 font-semibold">PROBLEM:</strong> Ketidakcocokan stok barang akibat pencatatan inventaris manual.</p>
+                  <p><strong class="text-emerald-400 font-semibold">SOLUTION:</strong> Sistem inventaris Node.js + PostgreSQL dengan caching Redis &amp; Docker setup.</p>
+                </div>
+
+                <div class="pt-2">
+                  <span class="text-[10px] font-mono text-slate-400 block mb-1">ENGINEERING FOCUS:</span>
+                  <div class="flex flex-wrap gap-1 text-[11px] font-mono text-slate-300">
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Dockerized</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Redis Cache</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Barcode Cam</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">PostgreSQL</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
+              <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:text-white flex items-center gap-1 font-mono"><i class="fa-brands fa-github"></i> Code</a>
+              <button type="button" class="proj-link demo-trigger text-xs text-sky-400 hover:text-sky-300 font-mono font-semibold flex items-center gap-1" data-proj="p5"><i class="fa-solid fa-arrow-up-right-from-square"></i> Engineering Details</button>
+            </div>
+          </div>
+
+          <!-- Project 6: Point of Sale (POS) System -->
+          <div class="project-card bg-slate-900/60 border border-slate-800/90 rounded-2xl overflow-hidden backdrop-blur-md flex flex-col justify-between hover:border-sky-500/40 transition group" data-category="web dashboard api">
+            <div>
+              <div class="project-thumb relative h-48 overflow-hidden bg-slate-950 flex items-center justify-center">
+                <i class="fa-solid fa-cash-register text-4xl text-sky-500/40"></i>
+                <span class="project-year absolute top-3 left-3 bg-slate-950/80 backdrop-blur px-2.5 py-1 rounded-md text-[10px] font-mono text-slate-300">2026</span>
+                <div class="project-badge status-progress absolute top-3 right-3 bg-amber-500/20 text-amber-400 border border-amber-500/30 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold">In Progress</div>
+              </div>
+              <div class="project-body p-6 space-y-3">
+                <div class="flex flex-wrap gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-blue-950 text-blue-300 text-[10px] font-mono">Full Stack</span>
+                  <span class="px-2.5 py-0.5 rounded bg-emerald-950 text-emerald-300 text-[10px] font-mono">Offline First</span>
+                  <span class="px-2.5 py-0.5 rounded bg-teal-950 text-teal-300 text-[10px] font-mono">API</span>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Point of Sale (POS) System</h3>
+                
+                <div class="space-y-1.5 text-xs text-slate-300">
+                  <p><strong class="text-amber-400 font-semibold">PROBLEM:</strong> Transaksi kasir ritel yang berbelit-belit dan lambat saat koneksi buruk.</p>
+                  <p><strong class="text-emerald-400 font-semibold">SOLUTION:</strong> Web POS ultra-cepat dengan Service Worker offline sync &amp; ESC/POS printer driver.</p>
+                </div>
+
+                <div class="pt-2">
+                  <span class="text-[10px] font-mono text-slate-400 block mb-1">ENGINEERING FOCUS:</span>
+                  <div class="flex flex-wrap gap-1 text-[11px] font-mono text-slate-300">
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">ESC/POS</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Offline Sync</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Redis Caching</span>
+                    <span class="bg-slate-950 px-2 py-0.5 rounded border border-slate-800">Next.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="p-6 pt-0 flex items-center justify-between border-t border-slate-800/60 mt-4">
+              <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="text-xs text-slate-300 hover:text-white flex items-center gap-1 font-mono"><i class="fa-brands fa-github"></i> Code</a>
+              <button type="button" class="proj-link demo-trigger text-xs text-sky-400 hover:text-sky-300 font-mono font-semibold flex items-center gap-1" data-proj="p6"><i class="fa-solid fa-arrow-up-right-from-square"></i> Engineering Details</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ENGINEERING EXPERIENCE SECTION -->
+    <section id="experience" class="section py-20 bg-slate-950/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-16">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="exp_subtitle">PENGALAMAN NYATA &amp; KEPEMIMPINAN</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="exp_title">Engineering &amp; Leadership Experience</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-xl mx-auto" data-i18n="exp_desc">Pengalaman nyata dari proyek akademik, pengembangan mandiri, kepemimpinan organisasi, dan pendampingan teknis.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          
+          <!-- Column 1: Academic & Technical Projects -->
+          <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-3xl backdrop-blur-xl space-y-6">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-800">
+              <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 text-lg">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white font-heading" data-i18n="exp_col1_title">Academic &amp; Technical Projects</h3>
+            </div>
+
+            <div class="space-y-6">
+              <div class="relative pl-6 border-l-2 border-slate-800 space-y-1">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-sky-500 border-4 border-slate-900"></div>
+                <span class="text-xs font-mono text-sky-400">2025 - Sekarang</span>
+                <h4 class="text-base font-bold text-white">Software Engineering Student Projects</h4>
+                <p class="text-xs text-slate-400 font-mono">Universitas Bina Sarana Informatika (UBSI Margonda)</p>
+                <p class="text-xs text-slate-300 leading-relaxed pt-1">Mengembangkan berbagai proyek aplikasi perkuliahan dan mandiri berbasis web (CRUD, REST API, Database design) dengan fokus pada aspek efisiensi dan kebersihan kode.</p>
+              </div>
+
+              <div class="relative pl-6 border-l-2 border-slate-800 space-y-1">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-900"></div>
+                <span class="text-xs font-mono text-sky-400">2023 - Sekarang</span>
+                <h4 class="text-base font-bold text-white">Freelance Web Development</h4>
+                <p class="text-xs text-slate-400 font-mono">Upwork &amp; Client Projects</p>
+                <p class="text-xs text-slate-300 leading-relaxed pt-1">Membuat dan merawat aplikasi web sederhana, integrasi REST API, perbaikan bug, dan penyesuaian layout responsif untuk berbagai klien.</p>
+              </div>
+
+              <div class="relative pl-6 border-l-2 border-slate-800 space-y-1">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-900"></div>
+                <span class="text-xs font-mono text-sky-400">2023 - 2024</span>
+                <h4 class="text-base font-bold text-white">Pengajar Bahasa Arab &amp; Inggris</h4>
+                <p class="text-xs text-slate-400 font-mono">Pondok An-Nibras Subang, Jawa Barat</p>
+                <p class="text-xs text-slate-300 leading-relaxed pt-1">Melaksanakan pengabdian 1 tahun sebagai guru bahasa, mengelola administrasi kelas, dan membimbing komunikasi interpersonal para santri.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Organization & Leadership -->
+          <div class="bg-slate-900/60 border border-slate-800 p-6 sm:p-8 rounded-3xl backdrop-blur-xl space-y-6">
+            <div class="flex items-center gap-3 pb-4 border-b border-slate-800">
+              <div class="w-10 h-10 rounded-xl bg-purple-600/20 border border-purple-500/30 flex items-center justify-center text-purple-400 text-lg">
+                <i class="fa-solid fa-users-gear"></i>
+              </div>
+              <h3 class="text-lg font-bold text-white font-heading" data-i18n="exp_col2_title">Organization &amp; Leadership</h3>
+            </div>
+
+            <div class="space-y-6">
+              <div class="relative pl-6 border-l-2 border-slate-800 space-y-1">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-500 border-4 border-slate-900"></div>
+                <span class="text-xs font-mono text-purple-400">2025 - Sekarang</span>
+                <h4 class="text-base font-bold text-white">Sekretaris UKM Taekwondo</h4>
+                <p class="text-xs text-slate-400 font-mono">Universitas Bina Sarana Informatika</p>
+                <p class="text-xs text-slate-300 leading-relaxed pt-1">Mengelola sistem administrasi organisasi, penyusunan proposal kejuaraan, pengarsipan data atlet, dan koordinasi alur kerja kegiatan.</p>
+              </div>
+
+              <div class="relative pl-6 border-l-2 border-slate-800 space-y-1">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-900"></div>
+                <span class="text-xs font-mono text-purple-400">2025 - Sekarang</span>
+                <h4 class="text-base font-bold text-white">Founder &amp; Lead Mentor</h4>
+                <p class="text-xs text-slate-400 font-mono">CodeWithMusyafa Community</p>
+                <p class="text-xs text-slate-300 leading-relaxed pt-1">Memimpin komunitas diskusi pemrograman pemula, berbagi tips coding, dan memfasilitasi sesi tanya jawab teknis seputar Software Engineering.</p>
+              </div>
+
+              <div class="relative pl-6 border-l-2 border-slate-800 space-y-1">
+                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-700 border-4 border-slate-900"></div>
+                <span class="text-xs font-mono text-purple-400">2022 - 2023</span>
+                <h4 class="text-base font-bold text-white">Sekretaris Bagian Kelistrikan &amp; Pemesinan</h4>
+                <p class="text-xs text-slate-400 font-mono">Pondok Modern Darussalam Gontor</p>
+                <p class="text-xs text-slate-300 leading-relaxed pt-1">Mengelola pengarsipan log operasional, pemeliharaan sistem mekanikal-elektrikal, serta pencatatan perawatan mesin genset diesel.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CODE & OPEN SOURCE / GITHUB SECTION -->
+    <section id="github" class="section py-20 bg-slate-950 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-16">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="github_subtitle">REPOSITORI &amp; OPEN SOURCE</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="github_title">Code &amp; Open Source</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-xl mx-auto" data-i18n="github_desc">Saya secara aktif mempublikasikan proyek rekayasa perangkat lunak, latihan algoritma, dan eksplorasi teknologi baru di profil GitHub resmi saya.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 sm:p-12 text-center backdrop-blur-xl relative overflow-hidden group">
+          <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl text-white pointer-events-none group-hover:scale-110 transition-transform">
+            <i class="fa-brands fa-github"></i>
+          </div>
+
+          <div class="max-w-2xl mx-auto space-y-6 relative z-10">
+            <div class="w-16 h-16 rounded-2xl bg-slate-950 border border-slate-800 flex items-center justify-center text-3xl text-sky-400 mx-auto shadow-xl">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            
+            <h3 class="text-2xl sm:text-3xl font-bold text-white font-heading">Explore My Code Repositories on GitHub</h3>
+            
+            <p class="text-sm text-slate-300 leading-relaxed" data-i18n="github_desc">
+              Saya secara aktif mempublikasikan proyek rekayasa perangkat lunak, latihan algoritma, dan eksplorasi teknologi baru di profil GitHub resmi saya.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-2 font-mono text-xs text-sky-400 pt-2">
+              <span class="bg-slate-950 px-3 py-1 rounded-full border border-slate-800">@MusyafaAnasrullah</span>
+              <span class="bg-slate-950 px-3 py-1 rounded-full border border-slate-800">Public Repositories</span>
+              <span class="bg-slate-950 px-3 py-1 rounded-full border border-slate-800">Open Source Code</span>
+            </div>
+
+            <div class="pt-4">
+              <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold bg-white text-slate-950 hover:bg-slate-200 transition shadow-xl text-sm tracking-wide">
+                <i class="fa-brands fa-github text-lg"></i>
+                <span data-i18n="github_btn">VIEW GITHUB PROFILE</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERNSHIP APPLICATION SECTION -->
+    <section id="internship" class="section py-20 bg-gradient-to-b from-slate-950 via-blue-950/40 to-slate-950 relative border-y border-blue-500/20">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-12">
+          <span class="px-3.5 py-1 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-xs font-mono font-bold uppercase tracking-widest inline-block mb-3" data-i18n="intern_portal_subtitle">RECRUITER PORTAL</span>
+          <h2 class="text-3xl sm:text-5xl font-extrabold text-white font-heading tracking-tight" data-i18n="intern_portal_title">LOOKING FOR MY NEXT SOFTWARE ENGINEERING INTERNSHIP</h2>
+          <div class="w-24 h-1.5 bg-gradient-to-r from-blue-500 via-sky-400 to-emerald-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+          <blockquote class="text-base sm:text-lg text-slate-200 leading-relaxed italic font-medium bg-slate-900/80 border border-slate-800 p-6 sm:p-8 rounded-2xl backdrop-blur-xl shadow-2xl" data-i18n="intern_portal_quote">
+            "I am currently open to Software Engineering Internship opportunities where I can contribute to real-world products, learn from experienced engineers, and grow through hands-on software development."
+          </blockquote>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-left">
+            
+            <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl backdrop-blur-md">
+              <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-sky-400 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-briefcase"></i> <span data-i18n="target_roles_title">TARGET ROLES</span>
+              </h3>
+              <ul class="space-y-2.5 text-sm text-slate-200">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Software Engineering Intern</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Web Development Intern</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Backend Engineering Intern</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-400"></i> <span>Full-Stack Engineering Intern</span></li>
+              </ul>
+            </div>
+
+            <div class="bg-slate-900/70 border border-slate-800 p-6 rounded-2xl backdrop-blur-md">
+              <h3 class="text-sm font-mono font-bold uppercase tracking-wider text-sky-400 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-building text-sky-400"></i> <span data-i18n="target_env_title">TARGET WORK ENVIRONMENT</span>
+              </h3>
+              <ul class="space-y-2.5 text-sm text-slate-200">
+                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-sky-400"></i> <span>Product Engineering Teams</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-sky-400"></i> <span>Technology &amp; Software Companies</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-sky-400"></i> <span>Growth-Stage Startups</span></li>
+                <li class="flex items-center gap-2"><i class="fa-solid fa-arrow-right text-sky-400"></i> <span>Software Development Teams</span></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <!-- CTAs for Recruiter -->
+          <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+            <a href="assets/Musyafa-Anasrullah-CV-SE.docx" download="Musyafa-Anasrullah-CV-SE.docx" target="_blank" rel="noopener noreferrer" class="px-8 py-4 rounded-xl font-extrabold bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-xl shadow-sky-500/25 hover:shadow-sky-500/40 hover:scale-105 transition-all text-sm tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-file-arrow-down text-lg"></i>
+              <span data-i18n="btn_download_cv">DOWNLOAD RESUME</span>
+            </a>
+            <a href="#contact" class="px-8 py-4 rounded-xl font-bold bg-slate-900 border border-slate-700 text-slate-100 hover:border-sky-500 hover:scale-105 transition-all text-sm tracking-wider flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane text-sky-400 text-lg"></i>
+              <span data-i18n="nav_contact">CONTACT ME</span>
+            </a>
+            <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="px-6 py-4 rounded-xl font-bold bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white transition text-sm flex items-center gap-2">
+              <i class="fa-brands fa-github text-lg"></i>
+              <span>GITHUB</span>
+            </a>
+            <a href="https://www.linkedin.com/in/musyafa-anasrullah-674368309/" target="_blank" rel="noopener noreferrer" class="px-6 py-4 rounded-xl font-bold bg-slate-900/80 border border-slate-800 text-slate-300 hover:text-white transition text-sm flex items-center gap-2">
+              <i class="fa-brands fa-linkedin text-lg text-blue-400"></i>
+              <span>LINKEDIN</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & TECHNICAL CERTIFICATES SECTION -->
+    <section id="achievements" class="section py-20 bg-slate-950 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-12">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="ach_subtitle">PRESTASI &amp; SERTIFIKASI</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="ach_title">Technical Certificates &amp; Competencies</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-xl mx-auto" data-i18n="ach_desc">Dokumen bukti sertifikasi software engineering, web development, AI, dan cybersecurity.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <!-- Technical Certificate Card Single Showcase -->
+        <div class="max-w-2xl mx-auto">
+          <div class="ach-card bg-slate-900/70 border border-slate-800 rounded-3xl overflow-hidden backdrop-blur-md hover:border-sky-500/40 transition group cursor-pointer ach-cat-card" data-cat="cert">
+            <div class="ach-thumb p-10 text-center relative" style="background: linear-gradient(135deg, rgba(30,58,138,0.35) 0%, rgba(2,6,23,0.7) 100%)">
+              <i class="fa-solid fa-certificate text-6xl text-sky-400 mb-4 group-hover:scale-110 transition-transform inline-block"></i>
+              <span class="ach-badge-pill block text-xs font-mono text-sky-300 font-semibold"><i class="fa-solid fa-file-pdf mr-1 text-red-400"></i> <span data-i18n="ach_cert_count">16 Sertifikat Teknis Dokumen</span></span>
+            </div>
+            <div class="ach-body p-8 text-center space-y-3">
+              <span class="ach-type text-xs font-mono uppercase tracking-widest text-sky-400 block font-bold">SOFTWARE ENGINEERING &amp; IT CERTIFICATES</span>
+              <h4 class="text-xl font-bold text-white font-heading" data-i18n="ach_cert_title">Dokumen Sertifikat Software Engineering &amp; IT</h4>
+              <p class="text-xs text-slate-400 leading-relaxed max-w-lg mx-auto" data-i18n="ach_cert_desc">Bukti kompetensi Web Development, AI-Powered Engineering, Ethical Hacking, API Security, dan IT Governance.</p>
+              
+              <div class="pt-4">
+                <button type="button" class="ach-open-btn px-6 py-3 rounded-xl font-mono text-xs font-bold bg-sky-500/10 hover:bg-sky-500/20 text-sky-300 border border-sky-500/30 transition inline-flex items-center gap-2 shadow-lg">
+                  <i class="fa-solid fa-folder-open text-sky-400"></i>
+                  <span data-i18n="ach_open_docs">Buka &amp; Lihat Dokumen (16)</span>
+                  <i class="fa-solid fa-chevron-right text-xs"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section py-20 bg-slate-950/80 relative">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Section Header -->
+        <div class="section-header text-center mb-16">
+          <span class="text-xs uppercase tracking-widest text-sky-400 font-mono font-semibold" data-i18n="contact_subtitle">HUBUNGI SAYA</span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading mt-2" data-i18n="contact_title">Get In Touch</h2>
+          <p class="text-sm text-slate-400 mt-2 max-w-xl mx-auto" data-i18n="contact_desc">Mari berdiskusi mengenai Software Engineering Internship, proyek aplikasi web, atau diskusi teknis.</p>
+          <div class="w-16 h-1 bg-gradient-to-r from-blue-600 to-sky-400 mx-auto mt-4 rounded-full"></div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          
+          <!-- Left Info Cards -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="contact-info bg-slate-900/60 border border-slate-800 p-8 rounded-3xl backdrop-blur-xl shadow-xl space-y-6">
+              <h3 class="text-xl font-bold text-white font-heading" data-i18n="contact_info_title">Contact Information</h3>
+              <p class="text-xs text-slate-400 leading-relaxed" data-i18n="contact_info_desc">Terbuka untuk diskusi mengenai kesempatan magang, proyek software, dan kolaborasi teknis.</p>
+
+              <div class="space-y-4 pt-2">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400">
+                    <i class="fa-solid fa-envelope"></i>
+                  </div>
+                  <div>
+                    <strong class="block text-xs text-slate-400">Email</strong>
+                    <a href="mailto:musyafaanasrullah4@gmail.com" class="text-sm font-semibold text-slate-200 hover:text-sky-400 transition">musyafaanasrullah4@gmail.com</a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-emerald-600/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </div>
+                  <div>
+                    <strong class="block text-xs text-slate-400">WhatsApp</strong>
+                    <a href="https://wa.me/628139707965" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-200 hover:text-emerald-400 transition">+62 813-9707-965</a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-200">
+                    <i class="fa-brands fa-github"></i>
+                  </div>
+                  <div>
+                    <strong class="block text-xs text-slate-400">GitHub</strong>
+                    <a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-200 hover:text-white transition">MusyafaAnasrullah</a>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-blue-700/20 border border-blue-600/30 flex items-center justify-center text-blue-400">
+                    <i class="fa-brands fa-linkedin"></i>
+                  </div>
+                  <div>
+                    <strong class="block text-xs text-slate-400">LinkedIn</strong>
+                    <a href="https://www.linkedin.com/in/musyafa-anasrullah-674368309/" target="_blank" rel="noopener noreferrer" class="text-sm font-semibold text-slate-200 hover:text-blue-400 transition">Musyafa Anasrullah</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="contact-form-box bg-slate-900/60 border border-slate-800 p-8 rounded-3xl backdrop-blur-xl shadow-xl">
+              <h3 class="text-xl font-bold text-white font-heading mb-6" data-i18n="contact_form_title">Send Me a Message</h3>
+              
+              <form id="contact-form" class="space-y-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="form-group space-y-1.5">
+                    <label for="name" class="text-xs font-mono text-slate-300 block" data-i18n="lbl_name">Nama Lengkap</label>
+                    <input type="text" id="name" name="name" placeholder="Masukkan nama Anda..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition" />
+                  </div>
+
+                  <div class="form-group space-y-1.5">
+                    <label for="email" class="text-xs font-mono text-slate-300 block" data-i18n="lbl_email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="nama@email.com" required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition" />
+                  </div>
+                </div>
+
+                <div class="form-group space-y-1.5">
+                  <label for="subject" class="text-xs font-mono text-slate-300 block" data-i18n="lbl_subject">Subject</label>
+                  <input type="text" id="subject" name="subject" placeholder="Subjek pesan..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition" />
+                </div>
+
+                <div class="form-group space-y-1.5">
+                  <label for="message" class="text-xs font-mono text-slate-300 block" data-i18n="lbl_message">Pesan (Message)</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Tuliskan pesan Anda di sini..." required class="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-sky-500 transition"></textarea>
+                </div>
+
+                <button type="submit" class="w-full py-4 rounded-xl font-bold bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-xl shadow-sky-500/20 hover:shadow-sky-500/35 transition flex items-center justify-center gap-2 text-sm tracking-wider">
+                  <i class="fa-solid fa-paper-plane"></i>
+                  <span data-i18n="btn_send">KIRIM PESAN</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER SECTION -->
+  <footer class="footer bg-slate-950 border-t border-slate-800/80 py-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
+        
+        <div class="lg:col-span-2 space-y-3">
+          <h3 class="font-heading font-extrabold text-xl text-white">MUSYAFA ANASRULLAH</h3>
+          <p class="text-xs font-mono text-sky-400" data-i18n="footer_role">Software Engineering Student</p>
+          <p class="text-xs text-slate-400 max-w-sm leading-relaxed" data-i18n="footer_quote">"Building reliable, scalable, and meaningful digital solutions."</p>
+          <div class="pt-2">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950 border border-blue-500/30 text-blue-300 text-xs font-mono font-medium">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span data-i18n="drawer_status">Open to Software Engineering Internship</span>
+            </span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-3">Navigation</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="#home" class="hover:text-sky-400 transition" data-i18n="nav_home">Home</a></li>
+            <li><a href="#about" class="hover:text-sky-400 transition" data-i18n="nav_about">About</a></li>
+            <li><a href="#journey" class="hover:text-sky-400 transition" data-i18n="nav_journey">Journey</a></li>
+            <li><a href="#skills" class="hover:text-sky-400 transition" data-i18n="nav_skills">Skills</a></li>
+            <li><a href="#dsa" class="hover:text-sky-400 transition" data-i18n="nav_dsa">Problem Solving</a></li>
+            <li><a href="#projects" class="hover:text-sky-400 transition" data-i18n="nav_projects">Projects</a></li>
+            <li><a href="#experience" class="hover:text-sky-400 transition" data-i18n="nav_experience">Experience</a></li>
+            <li><a href="#github" class="hover:text-sky-400 transition" data-i18n="nav_github">GitHub</a></li>
+            <li><a href="#achievements" class="hover:text-sky-400 transition" data-i18n="nav_achievements">Certificates</a></li>
+            <li><a href="#internship" class="hover:text-sky-400 transition font-semibold text-sky-400" data-i18n="nav_internship">Internship</a></li>
+            <li><a href="#contact" class="hover:text-sky-400 transition" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-3">Tech Stack</h4>
+          <ul class="space-y-2 text-xs text-slate-400 font-mono">
+            <li>JavaScript / TypeScript</li>
+            <li>React &amp; Tailwind CSS</li>
+            <li>Node.js &amp; Express.js</li>
+            <li>SQL, PostgreSQL &amp; MySQL</li>
+            <li>Linux &amp; Docker</li>
+            <li>Git &amp; GitHub Actions</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-3">Connect</h4>
+          <ul class="space-y-2 text-xs text-slate-400">
+            <li><a href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-brands fa-github"></i> GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/musyafa-anasrullah-674368309/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-brands fa-linkedin"></i> LinkedIn</a></li>
+            <li><a href="mailto:musyafaanasrullah4@gmail.com" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-solid fa-envelope"></i> Email</a></li>
+            <li><a href="https://wa.me/628139707965" target="_blank" rel="noopener noreferrer" class="hover:text-white transition flex items-center gap-1.5"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 border-t border-slate-900 text-center text-xs text-slate-400 space-y-1">
+        <p data-i18n="footer_copy">© 2026 Musyafa Anasrullah. All Rights Reserved. Designed &amp; Developed for Software Engineering Internship.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Gallery & Certificates -->
+  <div id="lightbox-modal" class="lightbox-modal fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="lightbox-content max-w-3xl w-full bg-slate-900 border border-slate-800 rounded-3xl p-6 relative shadow-2xl text-center">
+      <button id="lightbox-close" class="lightbox-close absolute top-4 right-4 text-slate-400 hover:text-white text-2xl">&times;</button>
+      <div id="lightbox-graphic" class="lightbox-graphic text-6xl text-sky-400 my-6"></div>
+      <p id="lightbox-caption" class="lightbox-caption text-sm text-slate-200 font-medium"></p>
+    </div>
+  </div>
+
+  <!-- Project Detail Modal -->
+  <div id="project-modal" class="project-modal fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto" aria-hidden="true" role="dialog" aria-labelledby="p-modal-title">
+    <div class="p-modal-content max-w-3xl w-full my-8 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 relative shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="p-modal-header flex items-start justify-between border-b border-slate-800 pb-4">
+        <div class="p-modal-header-text">
+          <h2 id="p-modal-title" class="text-xl sm:text-2xl font-bold text-white font-heading"></h2>
+          <p id="p-modal-cat" class="p-modal-cat text-xs font-mono text-sky-400 mt-1"></p>
+        </div>
+        <button id="p-modal-close" class="p-modal-close p-2 text-slate-400 hover:text-white text-xl" type="button" aria-label="Tutup Detail Proyek"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <div id="p-modal-body" class="p-modal-body space-y-4"></div>
+      
+      <div class="p-modal-footer flex items-center justify-end gap-3 pt-4 border-t border-slate-800">
+        <a id="p-modal-github" href="https://github.com/MusyafaAnasrullah/musyafaanasrullah" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-slate-800 hover:bg-slate-700 text-slate-200 transition flex items-center gap-1.5"><i class="fa-brands fa-github"></i> Repository</a>
+        <a id="p-modal-live" href="#" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-xl text-xs font-mono font-semibold bg-gradient-to-r from-blue-600 to-sky-500 text-white transition flex items-center gap-1.5"><i class="fa-solid fa-rocket"></i> Live Demo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Document Showcase Modal -->
+  <div id="doc-showcase-modal" class="doc-showcase-modal fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md hidden items-center justify-center p-4 overflow-y-auto" aria-hidden="true" role="dialog" aria-labelledby="doc-modal-title">
+    <div class="doc-modal-content max-w-4xl w-full my-8 bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 relative shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="doc-modal-header flex items-center justify-between border-b border-slate-800 pb-4">
+        <div class="doc-modal-title-box flex items-center gap-3">
+          <div class="doc-modal-icon w-10 h-10 rounded-xl bg-blue-600/20 border border-blue-500/30 flex items-center justify-center text-sky-400 text-lg" id="doc-modal-icon-container">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <div>
+            <h3 id="doc-modal-title" class="text-lg font-bold text-white font-heading">Dokumen Sertifikat</h3>
+            <p id="doc-modal-subtitle" class="doc-modal-subtitle text-xs text-slate-400 font-mono">Bukti kompetensi dan keahlian teknis</p>
+          </div>
+        </div>
+        <button id="doc-modal-close" class="doc-modal-close p-2 text-slate-400 hover:text-white text-xl" type="button" aria-label="Tutup Modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="doc-modal-body space-y-3" id="doc-modal-body">
+        <!-- Dynamic list injected via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Inline PDF Viewer Modal -->
+  <div id="pdf-viewer-modal" class="pdf-viewer-modal fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-md hidden items-center justify-center p-4" aria-hidden="true" role="dialog" aria-labelledby="pdf-viewer-title">
+    <div class="pdf-viewer-content max-w-5xl w-full h-[90vh] bg-slate-900 border border-slate-800 rounded-3xl flex flex-col overflow-hidden shadow-2xl">
+      <div class="pdf-viewer-header p-4 bg-slate-950 border-b border-slate-800 flex items-center justify-between">
+        <div class="pdf-viewer-info flex items-center gap-2">
+          <i class="fa-solid fa-file-pdf text-red-500"></i>
+          <span id="pdf-viewer-title" class="text-sm font-bold text-white font-mono">Preview Dokumen PDF</span>
+        </div>
+        <div class="pdf-viewer-actions flex items-center gap-2">
+          <button id="pdf-viewer-back" type="button" class="px-3 py-1.5 rounded-lg bg-slate-800 text-xs font-mono text-slate-200 hover:bg-slate-700 transition" title="Kembali ke Daftar Dokumen"><i class="fa-solid fa-arrow-left"></i> Kembali</button>
+          <a id="pdf-viewer-download" href="javascript:void(0)" class="px-3 py-1.5 rounded-lg bg-blue-600 text-xs font-mono text-white hover:bg-blue-500 transition" title="Download ke Perangkat"><i class="fa-solid fa-download"></i> Download</a>
+          <a id="pdf-viewer-external" href="#" target="_blank" rel="noopener noreferrer" class="px-3 py-1.5 rounded-lg bg-slate-800 text-xs font-mono text-slate-200 hover:bg-slate-700 transition" title="Buka di Tab Baru"><i class="fa-solid fa-arrow-up-right-from-square"></i> Tab Baru</a>
+          <button id="pdf-viewer-close" class="pdf-viewer-close p-2 text-slate-400 hover:text-white text-xl" type="button" aria-label="Tutup PDF"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      </div>
+      <div class="pdf-viewer-body flex-1 bg-slate-950" id="pdf-viewer-container">
+        <!-- Dynamic object/embed/iframe PDF viewer injected by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Scroll Progress & Back-to-Top Indicator -->
+  <div id="scroll-progress-widget" class="scroll-progress-widget fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-slate-900/90 border border-slate-700 text-sky-400 flex items-center justify-center cursor-pointer shadow-2xl backdrop-blur transition transform hover:scale-110 active:scale-95" role="button" tabindex="0" aria-label="Kembali ke atas" title="Kembali ke atas">
+    <svg class="progress-ring absolute inset-0 w-full h-full" width="56" height="56" viewBox="0 0 56 56">
+      <circle class="progress-ring-bg stroke-slate-800" cx="28" cy="28" r="23" fill="none" stroke-width="3" />
+      <circle class="progress-ring-circle stroke-sky-400 transition-all duration-150" id="progress-ring-circle" cx="28" cy="28" r="23" fill="none" stroke-width="3" />
+    </svg>
+    <div class="progress-inner flex flex-col items-center justify-center z-10">
+      <i class="fa-solid fa-chevron-up text-xs"></i>
+      <span class="scroll-pct-text text-[9px] font-mono font-bold" id="scroll-pct-text">0%</span>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
