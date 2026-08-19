@@ -71,8 +71,19 @@
   <header class="navbar sticky top-0 z-40 w-full backdrop-blur-md bg-slate-950/85 border-b border-slate-800/80 transition-all duration-300" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-18 xl:h-20 flex items-center justify-between gap-3">
       
-      <!-- Desktop Navigation Menu — only visible on xl+ -->
-      <nav class="hidden xl:flex items-center flex-1" id="nav-links" style="gap:3px">
+      <!-- Left Brand Logo -->
+      <a href="#home" class="flex items-center gap-2.5 group py-1 flex-shrink-0" aria-label="Musyafa Anasrullah">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-sky-400 p-0.5 shadow-lg shadow-sky-500/20 group-hover:shadow-sky-500/40 transition">
+          <div class="w-full h-full bg-slate-950 rounded-[9px] flex items-center justify-center font-mono font-black text-sky-400 text-xs">&lt;/&gt;</div>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-bold text-xs sm:text-[13px] text-sky-400 tracking-tight leading-tight group-hover:text-sky-300 transition">Musyafa Anasrullah</span>
+          <span class="text-[9.5px] sm:text-[10px] font-mono text-emerald-400 flex items-center gap-1 leading-tight"><span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>SWE Intern</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu — only visible on xl+ (1280px+) -->
+      <nav class="hidden xl:flex items-center justify-center flex-1 px-4 gap-1" id="nav-links">
         <a href="#home" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors active" data-i18n="nav_home">Home</a>
         <a href="#about" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_about">About</a>
         <a href="#journey" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_journey">Journey</a>
@@ -86,14 +97,14 @@
         <a href="#contact" class="nav-link px-2.5 py-1.5 text-[11.5px] font-medium text-slate-300 hover:text-white rounded-lg transition-colors" data-i18n="nav_contact">Contact</a>
       </nav>
 
-      <!-- Right Controls: Language Selector, Theme Toggle, Hamburger -->
-      <div class="nav-controls ml-auto flex items-center gap-2 flex-shrink-0 z-50">
+      <!-- Right Controls: Language Selector & Theme Toggle (Desktop), Quick Theme & Hamburger (Mobile) -->
+      <div class="nav-controls flex items-center gap-2.5 flex-shrink-0 z-50">
 
-        <!-- Language Selector -->
-        <div class="lang-selector-wrapper relative inline-block text-left flex-shrink-0">
+        <!-- Language Selector — visible on sm+, also inside mobile drawer -->
+        <div class="lang-selector-wrapper relative hidden sm:inline-block text-left flex-shrink-0">
           <div class="flex items-center bg-slate-900/90 border border-slate-700/80 rounded-xl px-2.5 py-1.5 text-xs text-slate-300 hover:border-sky-500/50 transition shadow-inner">
             <i class="fa-solid fa-globe lang-icon text-sky-400 mr-1.5 text-xs"></i>
-            <select id="lang-select" class="lang-select bg-transparent text-slate-200 text-xs font-medium focus:outline-none cursor-pointer pr-1" aria-label="Select Language">
+            <select class="lang-select bg-transparent text-slate-200 text-xs font-medium focus:outline-none cursor-pointer pr-1" aria-label="Select Language">
               <option value="id" class="bg-slate-900 text-slate-100">🇮🇩 ID</option>
               <option value="en" class="bg-slate-900 text-slate-100">🇬🇧 EN</option>
             </select>
@@ -101,7 +112,7 @@
         </div>
 
         <!-- Dark / Light Theme Toggle -->
-        <button id="theme-toggle" class="theme-toggle p-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-sky-500/50 transition flex items-center justify-center w-9 h-9 shadow-inner flex-shrink-0 cursor-pointer" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
+        <button class="theme-toggle p-2 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-300 hover:text-white hover:border-sky-500/50 transition flex items-center justify-center w-9 h-9 shadow-inner flex-shrink-0 cursor-pointer" aria-label="Toggle Light/Dark Theme" title="Toggle Theme">
           <i class="fa-solid fa-sun sun-icon text-sm text-amber-400"></i>
           <i class="fa-solid fa-moon moon-icon text-sm text-sky-400"></i>
         </button>
@@ -114,34 +125,106 @@
         </button>
       </div>
     </div>
+  </header>
 
-    <!-- Navigation Drawer Overlay Menu -->
-    <div class="mobile-drawer fixed inset-y-0 right-0 w-80 sm:w-96 bg-slate-950/95 border-l border-slate-800 backdrop-blur-xl p-6 shadow-2xl transform translate-x-full transition-transform duration-300 z-50 flex flex-col justify-between" id="mobile-drawer">
-      <div>
-        <div class="drawer-header flex items-center justify-end pb-4 border-b border-slate-800/80 mb-5">
-          <button id="drawer-close" class="drawer-close p-1.5 text-slate-400 hover:text-white text-lg rounded-lg hover:bg-slate-800/50 transition cursor-pointer" aria-label="Close Navigation Menu"><i class="fa-solid fa-xmark"></i></button>
+  <!-- Navigation Drawer Backdrop Overlay -->
+  <div id="drawer-backdrop" class="drawer-backdrop fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-[1999]" aria-hidden="true"></div>
+
+  <!-- Navigation Drawer Overlay Menu -->
+  <div class="mobile-drawer fixed inset-y-0 right-0 w-[88vw] max-w-[340px] bg-slate-950/98 border-l border-slate-800 backdrop-blur-2xl p-5 shadow-2xl z-[2000] flex flex-col justify-between" id="mobile-drawer" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+    <div class="flex flex-col h-full overflow-hidden">
+      <!-- Drawer Header: Brand & Close -->
+      <div class="drawer-header flex items-center justify-between pb-3 border-b border-slate-800/80 mb-3 flex-shrink-0">
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 to-sky-400 p-0.5">
+            <div class="w-full h-full bg-slate-950 rounded-[6px] flex items-center justify-center font-mono font-black text-sky-400 text-[11px]">&lt;/&gt;</div>
+          </div>
+          <div>
+            <span class="font-heading font-bold text-xs text-sky-400 block leading-none">Musyafa Anasrullah</span>
+            <span class="text-[9px] font-mono text-slate-400">SWE Intern</span>
+          </div>
+        </div>
+        <button id="drawer-close" class="drawer-close p-2 text-slate-400 hover:text-white text-lg rounded-xl hover:bg-slate-800/60 transition cursor-pointer" aria-label="Close Navigation Menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Quick Preferences & Status inside Drawer -->
+      <div class="drawer-controls-row flex items-center justify-between gap-2 p-2.5 rounded-xl bg-slate-900/80 border border-slate-800 mb-3 flex-shrink-0">
+        <!-- Language Selector inside Drawer -->
+        <div class="flex items-center bg-slate-950 border border-slate-800 rounded-lg px-2 py-1 text-xs text-slate-300">
+          <i class="fa-solid fa-globe text-sky-400 mr-1.5 text-xs"></i>
+          <select class="lang-select bg-transparent text-slate-200 text-xs font-medium focus:outline-none cursor-pointer pr-1" aria-label="Select Language">
+            <option value="id" class="bg-slate-900 text-slate-100">🇮🇩 ID</option>
+            <option value="en" class="bg-slate-900 text-slate-100">🇬🇧 EN</option>
+          </select>
         </div>
 
-        <div class="drawer-links flex flex-col space-y-1 max-h-[75vh] overflow-y-auto pr-2">
-          <a href="#home" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_home"><span>Home</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#about" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_about"><span>About</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#journey" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_journey"><span>Journey</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#skills" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_skills"><span>Skills</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#dsa" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_dsa"><span>Problem Solving</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#projects" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_projects"><span>Projects</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#experience" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_experience"><span>Experience</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#github" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_github"><span>GitHub</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#achievements" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_achievements"><span>Certificates</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
-          <a href="#internship" class="drawer-link text-sky-400 font-bold py-2 transition-colors flex items-center justify-between" data-i18n="nav_internship"><span>Internship</span> <i class="fa-solid fa-user-check text-xs"></i></a>
-          <a href="#contact" class="drawer-link text-slate-300 hover:text-sky-400 font-medium py-2 transition-colors flex items-center justify-between" data-i18n="nav_contact"><span>Contact</span> <i class="fa-solid fa-chevron-right text-xs opacity-40"></i></a>
+        <!-- Available status pill -->
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-blue-950/70 border border-blue-500/30 text-blue-300 text-[10px] font-mono font-medium">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>SWE Intern</span>
         </div>
       </div>
 
-      <div class="drawer-footer pt-4 border-t border-slate-800">
-        <p class="drawer-quote text-[11px] text-slate-500 italic text-center font-mono">"Building reliable, scalable, and meaningful solutions."</p>
+      <!-- Drawer Scrollable Navigation Links -->
+      <div class="drawer-links flex flex-col space-y-1 overflow-y-auto pr-1 flex-1">
+        <a href="#home" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_home">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-house text-sky-400 w-4 text-center"></i> Home</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#about" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_about">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-user text-sky-400 w-4 text-center"></i> About</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#journey" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_journey">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-route text-sky-400 w-4 text-center"></i> Journey</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#skills" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_skills">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-layer-group text-sky-400 w-4 text-center"></i> Skills</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#dsa" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_dsa">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-brain text-sky-400 w-4 text-center"></i> Problem Solving</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#projects" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_projects">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-cubes text-sky-400 w-4 text-center"></i> Projects</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#experience" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_experience">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-briefcase text-sky-400 w-4 text-center"></i> Experience</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#github" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_github">
+          <span class="flex items-center gap-2.5"><i class="fa-brands fa-github text-sky-400 w-4 text-center"></i> GitHub</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#achievements" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_achievements">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-certificate text-sky-400 w-4 text-center"></i> Certificates</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+        <a href="#internship" class="drawer-link text-sky-400 font-bold bg-blue-950/40 border border-blue-500/30 hover:bg-blue-950/70 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs" data-i18n="nav_internship">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-user-check text-emerald-400 w-4 text-center"></i> Internship</span>
+          <span class="px-2 py-0.5 rounded-full bg-emerald-500 text-slate-950 text-[9px] font-bold font-mono">READY</span>
+        </a>
+        <a href="#contact" class="drawer-link text-slate-200 hover:text-sky-400 hover:bg-slate-900/60 px-3 py-2 rounded-xl transition flex items-center justify-between text-xs font-medium" data-i18n="nav_contact">
+          <span class="flex items-center gap-2.5"><i class="fa-solid fa-envelope text-sky-400 w-4 text-center"></i> Contact</span>
+          <i class="fa-solid fa-chevron-right text-[10px] opacity-40"></i>
+        </a>
+      </div>
+
+      <!-- Drawer Footer & Resume CTA -->
+      <div class="drawer-footer pt-3 border-t border-slate-800 flex-shrink-0 space-y-2 mt-2">
+        <a href="assets/Musyafa-Anasrullah-CV-SE.docx" download="Musyafa-Anasrullah-CV-SE.docx" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 rounded-xl font-bold bg-gradient-to-r from-blue-600 to-sky-500 text-white shadow-lg shadow-sky-500/20 hover:shadow-sky-500/35 transition flex items-center justify-center gap-2 text-xs font-mono">
+          <i class="fa-solid fa-file-arrow-down text-sm"></i>
+          <span data-i18n="btn_download_cv">DOWNLOAD RESUME</span>
+        </a>
+        <p class="drawer-quote text-[10px] text-slate-400 italic text-center font-mono leading-relaxed">"Building reliable, scalable, and meaningful solutions."</p>
       </div>
     </div>
-  </header>
+  </div>
 
   <main class="relative z-10">
     
@@ -508,11 +591,6 @@
       </div>
     </section>
 
-    <!-- SKILLS SECTION -->
-    <section id="skills" class="section py-20 bg-slate-950/80 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <!-- Section Header -->
     <!-- SKILLS & TECH STACK SECTION -->
     <section id="skills" class="section py-20 bg-slate-950/80 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

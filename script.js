@@ -344,7 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  const langSelect = document.getElementById('lang-select');
+  const langSelects = document.querySelectorAll('.lang-select');
   
   function applyLanguage(lang) {
     const dict = translations[lang] || translations.id;
@@ -355,17 +355,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
     localStorage.setItem('musyafa_lang', lang);
-  }
-
-  if (langSelect) {
-    const savedLang = localStorage.getItem('musyafa_lang') || 'id';
-    langSelect.value = savedLang;
-    applyLanguage(savedLang);
-
-    langSelect.addEventListener('change', (e) => {
-      applyLanguage(e.target.value);
+    langSelects.forEach(select => {
+      select.value = lang;
     });
   }
+
+  const savedLang = localStorage.getItem('musyafa_lang') || 'id';
+  applyLanguage(savedLang);
+
+  langSelects.forEach(select => {
+    select.addEventListener('change', (e) => {
+      applyLanguage(e.target.value);
+    });
+  });
 
   /* --- 2. DARK / LIGHT THEME TOGGLE --- */
   const themeToggleBtns = document.querySelectorAll('.theme-toggle');
@@ -502,50 +504,65 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const mobileDrawer = document.getElementById('mobile-drawer');
+  const drawerBackdrop = document.getElementById('drawer-backdrop');
   const drawerClose = document.getElementById('drawer-close');
   const drawerLinks = document.querySelectorAll('.drawer-link');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    if (window.scrollY > 30) {
       navbar?.classList.add('scrolled');
     } else {
       navbar?.classList.remove('scrolled');
     }
   });
 
-  if (hamburger && mobileDrawer) {
+  function openDrawer() {
+    mobileDrawer?.classList.add('open');
+    drawerBackdrop?.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    mobileDrawer?.classList.remove('open');
+    drawerBackdrop?.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger) {
     hamburger.addEventListener('click', (e) => {
       e.stopPropagation();
-      mobileDrawer.classList.toggle('open');
+      if (mobileDrawer?.classList.contains('open')) {
+        closeDrawer();
+      } else {
+        openDrawer();
+      }
     });
   }
 
-  if (drawerClose && mobileDrawer) {
+  if (drawerClose) {
     drawerClose.addEventListener('click', (e) => {
       e.stopPropagation();
-      mobileDrawer.classList.remove('open');
+      closeDrawer();
     });
   }
 
-  // Close drawer when clicking outside
-  document.addEventListener('click', (e) => {
-    if (mobileDrawer && mobileDrawer.classList.contains('open')) {
-      if (!mobileDrawer.contains(e.target) && !hamburger.contains(e.target)) {
-        mobileDrawer.classList.remove('open');
-      }
-    }
-  });
+  if (drawerBackdrop) {
+    drawerBackdrop.addEventListener('click', (e) => {
+      e.stopPropagation();
+      closeDrawer();
+    });
+  }
 
   // Close drawer on Escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && mobileDrawer && mobileDrawer.classList.contains('open')) {
-      mobileDrawer.classList.remove('open');
+    if (e.key === 'Escape' && mobileDrawer?.classList.contains('open')) {
+      closeDrawer();
     }
   });
 
   drawerLinks.forEach(link => {
     link.addEventListener('click', () => {
-      mobileDrawer?.classList.remove('open');
+      closeDrawer();
     });
   });
 
