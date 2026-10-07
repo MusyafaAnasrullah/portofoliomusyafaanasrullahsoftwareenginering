@@ -1541,6 +1541,20 @@ a.timeline-address:hover .address-ext-icon {
   overflow: hidden;
 }
 
+.project-thumb img,
+.project-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-normal);
+}
+
+.project-card:hover .project-thumb img,
+.project-card:hover .project-thumb-img {
+  transform: scale(1.05);
+}
+
 .thumb-placeholder {
   width: 100%;
   height: 100%;

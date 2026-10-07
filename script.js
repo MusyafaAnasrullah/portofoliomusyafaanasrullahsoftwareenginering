@@ -92,9 +92,9 @@ document.addEventListener('DOMContentLoaded', () => {
       projects_desc: "Proyek aplikasi rekayasa perangkat lunak yang menampilkan nilai teknis, pemecahan masalah, dan kebersihan arsitektur.",
       filter_all: "Semua",
       filter_web: "Web Dev",
-      filter_dashboard: "Dashboard",
-      filter_api: "API",
-      filter_ui: "Desain UI",
+      p1_desc: "Situs portofolio personal profesional dengan mode gelap/terang, animasi partikel interaktif, multi-bahasa (i18n), dan desain responsif premium.",
+      p2_desc: "Platform showcase proyek rekayasa perangkat lunak lengkap dengan galeri interaktif, filter kategori dinamis, dan tampilan detail proyek berbasis modal.",
+      p3_desc: "Platform website kelas online interaktif dengan manajemen materi kursus, video pembelajaran digital, kuis evaluasi, dan tracking progres belajar siswa.",
 
       github_subtitle: "REPOSITORI & OPEN SOURCE",
       github_title: "Code & Open Source",
@@ -244,9 +244,9 @@ document.addEventListener('DOMContentLoaded', () => {
       projects_desc: "Software engineering application projects showcasing technical value, problem solving, and architectural cleanliness.",
       filter_all: "All",
       filter_web: "Web Dev",
-      filter_dashboard: "Dashboard",
-      filter_api: "API",
-      filter_ui: "UI Design",
+      p1_desc: "Professional personal portfolio website featuring dark/light mode, interactive particle animations, multi-language (i18n), and premium responsive design.",
+      p2_desc: "Comprehensive software engineering showcase platform featuring interactive gallery, dynamic category filters, and modal-based project deep-dives.",
+      p3_desc: "Interactive online learning platform featuring course curriculum management, digital video lessons, evaluation quizzes, and student progress tracking.",
 
       github_subtitle: "REPOSITORIES & OPEN SOURCE",
       github_title: "Code & Open Source",
@@ -1038,12 +1038,12 @@ document.addEventListener('DOMContentLoaded', () => {
       cat: "Web Development • UI Design",
       status: "Live",
       year: "2026",
-      tech: ["HTML5", "Tailwind CSS", "JavaScript", "i18n Engine", "Canvas API"],
+      tech: ["HTML5", "CSS3", "JavaScript", "i18n"],
       liveUrl: "https://musyafaanasrullah.github.io/portofoliomusyafaanasrullah/",
       repoUrl: "https://github.com/MusyafaAnasrullah/portofoliomusyafaanasrullah",
-      overview: "Situs portofolio personal profesional yang dirancang khusus untuk memenuhi standar recruiter Software Engineering Internship. Dibangun tanpa dependency berat untuk memastikan performa ekstrem dan aksesibilitas tinggi.",
+      overview: "Situs portofolio personal profesional dengan mode gelap/terang, animasi partikel interaktif, multi-bahasa (i18n), dan desain responsif premium.",
       problem: "Membutuhkan platform personal portfolio yang tidak hanya menampilkan karya, tetapi menunjukkan fondasi rekayasa perangkat lunak, kebersihan kode, performa cepat, dan aksesibilitas multi-bahasa.",
-      solution: "Membangun SPA responsif menggunakan HTML5, Tailwind CSS, dan Vanilla JavaScript murni dengan i18n dictionary engine, particle background canvas, serta modal interaktif tanpa external library berat.",
+      solution: "Membangun SPA responsif menggunakan HTML5, CSS3, dan Vanilla JavaScript murni dengan i18n dictionary engine, particle background canvas, serta modal interaktif tanpa external library berat.",
       architecture: "Client-side Single Page Application (SPA) dengan Vanilla JS Component Architecture, LocalStorage persistence untuk preferensi tema/kontak, dan DOM state management terpusat.",
       features: [
         "Light/Dark Mode toggle dengan state persistence",
@@ -1053,112 +1053,50 @@ document.addEventListener('DOMContentLoaded', () => {
         "Zero-dependency lightweight client execution"
       ],
       challenges: "Mengoptimalkan event listener scroll dan render loop Canvas API agar tetap stabil di 60 FPS pada perangkat mobile berdaya rendah tanpa memory leak.",
-      learned: "Pendalaman arsitektur DOM tanpa framework, manajemen memori pada Canvas API, modularisasi i18n, serta penerapan desain Tailwind CSS modern."
+      learned: "Pendalaman arsitektur DOM tanpa framework, manajemen memori pada Canvas API, modularisasi i18n, serta penerapan desain responsif modern."
     },
     p2: {
-      title: "Portfolio Software Engineering Platform",
+      title: "Portfolio Software Engineering",
       cat: "Web Development • Dashboard",
       status: "Live",
       year: "2026",
-      tech: ["React", "Node.js", "Express", "PostgreSQL", "Framer Motion"],
+      tech: ["React", "Node.js", "MongoDB", "Framer Motion"],
       liveUrl: "https://musyafaanasrullah.github.io/portofoliomusyafaanasrullahsoftwareenginering/",
       repoUrl: "https://github.com/MusyafaAnasrullah/portofoliomusyafaanasrullahsoftwareenginering",
-      overview: "Platform showcase proyek rekayasa perangkat lunak dengan fitur pengolahan data proyek dinamis, galeri bermutu tinggi, dan analisis stack teknis.",
+      overview: "Platform showcase proyek rekayasa perangkat lunak lengkap dengan galeri interaktif, filter kategori dinamis, dan tampilan detail proyek berbasis modal.",
       problem: "Showcase proyek statis sering kali kaku dan sulit diperbarui saat jumlah proyek rekayasa bertambah pesat.",
       solution: "Membuat platform fullstack berbasis React & Node.js dengan RESTful API untuk mengelola metadata proyek, tagging teknologi, dan statistik repositori secara otomatis.",
-      architecture: "PERN Stack (PostgreSQL, Express, React, Node.js) dengan decoupled REST API, JWT authentication untuk admin dashboard, dan client-side caching.",
+      architecture: "Fullstack JavaScript Stack dengan decoupled REST API, filter kategori dinamis, dan client-side caching.",
       features: [
         "Galeri proyek interaktif dengan filter kategori multi-tag",
         "Modal detail arsitektur proyek dan visualizer tech stack",
-        "REST API backend dengan CRUD endpoint terproteksi",
+        "REST API backend dengan endpoint terstruktur",
         "Sistem caching dynamic content untuk respon sub-100ms"
       ],
-      challenges: "Merancang skema relasional PostgreSQL yang fleksibel untuk menyimpan metadata proyek heterogen tanpa merusak struktur relasi tag dan visualizer.",
-      learned: "Penerapan clean REST API design pattern, React hooks state orchestration, dan optimasi query PostgreSQL."
+      challenges: "Merancang skema database yang fleksibel untuk menyimpan metadata proyek heterogen tanpa merusak struktur relasi tag dan visualizer.",
+      learned: "Penerapan clean REST API design pattern, React hooks state orchestration, dan optimasi query database."
     },
     p3: {
-      title: "Finance Tracker & Analytics",
-      cat: "Web Development • Dashboard • API",
-      status: "In Progress",
-      year: "2025",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Chart.js"],
-      liveUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
-      repoUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
-      overview: "Aplikasi pelacak keuangan personal dengan grafik analitik real-time, pengelompokan transaksi otomatis, dan laporan arus kas kuartalan.",
-      problem: "Pencatatan keuangan manual sering kali tidak konsisten, rentan kesalahan manusia, dan sulit dianalisis tren jangka panjangnya.",
-      solution: "Mengembangkan platform analitik berbasis Next.js dan PostgreSQL dengan kalkulasi agregasi otomatis dan visualisasi interaktif.",
-      architecture: "Next.js App Router (SSR/SSG), Prisma ORM dengan PostgreSQL, Server Actions untuk mitigasi mutation latency, dan Chart.js visualizer.",
-      features: [
-        "Grafik tren pengeluaran dan pemasukan real-time",
-        "Kategorisasi transaksi otomatis dengan rule engine",
-        "Ekspor laporan bulanan/tahunan ke format PDF & CSV",
-        "Manajemen multi-dompet dan konversi mata uang"
-      ],
-      challenges: "Menjaga presisi perhitungan numerik desimal dan konsistensi transaksi database ACID saat concurrent request terjadi.",
-      learned: "Penggunaan Prisma ORM, SQL aggregation query, TypeScript strict mode, dan Server-Side Rendering pada Next.js."
-    },
-    p4: {
-      title: "Enterprise Admin Dashboard",
-      cat: "Web Development • Dashboard",
-      status: "In Progress",
-      year: "2025",
-      tech: ["Vue.js", "Laravel", "MySQL", "Tailwind CSS", "Pinia"],
-      liveUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
-      repoUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
-      overview: "Panel administrasi serbaguna dengan manajemen hak akses (RBAC), audit trail aktivitas pengguna, dan pemantauan sistem real-time.",
-      problem: "Perusahaan memerlukan portal internal yang aman untuk mengontrol pengguna, memantau log sistem, dan mengelola hak akses granular.",
-      solution: "Membangun dashboard enterprise berbasis Vue 3 dan Laravel REST API dengan sistem autentikasi Sanctum dan Role-Based Access Control.",
-      architecture: "Decoupled Single Page Application (Vue.js frontend) + Laravel REST API backend dengan MySQL relational database.",
-      features: [
-        "Role-Based Access Control (RBAC) granular",
-        "Real-time activity audit logging & security alert",
-        "Dynamic data tables dengan server-side pagination & sorting",
-        "System health indicators and metrics chart"
-      ],
-      challenges: "Mengimplementasikan permission checking yang efisien di frontend tanpa memicu redundant API authorization check ke server.",
-      learned: "Prinsip RBAC, arsitektur decoupled Vue + Laravel, serta optimasi SQL query pagination."
-    },
-    p5: {
-      title: "Inventory Management System",
-      cat: "Web Development • Dashboard • API",
-      status: "In Progress",
-      year: "2025",
-      tech: ["React", "Express.js", "PostgreSQL", "Docker", "Redis"],
-      liveUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
-      repoUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
-      overview: "Sistem manajemen inventaris untuk pelacakan stok produk real-time, peringatan reorder otomatis, dan pelaporan pergerakan barang.",
-      problem: "Ketidakcocokan stok akibat pencatatan manual barang masuk dan keluar yang menyebabkan kerugian operasional.",
-      solution: "Membangun sistem inventaris berbasis Node.js & PostgreSQL dengan caching Redis dan containerization Docker untuk kemudahan deployment.",
-      architecture: "Micro-monolith Express backend dengan Redis in-memory cache layer, PostgreSQL relational DB, dan Docker Compose orchestration.",
-      features: [
-        "Real-time stock monitoring & auto reorder alert",
-        "Integrasi barcode scanner via browser Web Cam API",
-        "Laporan histori mutasi barang masuk & keluar",
-        "Dockerized environment untuk dev & production parity"
-      ],
-      challenges: "Menghindari race condition pada pembaharuan stok barang secara simultan dari beberapa mesin kasir/gudang.",
-      learned: "Transaction locking di PostgreSQL, pemanfaatan Redis cache, dan containerization dengan Docker."
-    },
-    p6: {
-      title: "Point of Sale (POS) System",
-      cat: "Web Development • Dashboard • API",
+      title: "Website Kelas Online",
+      cat: "Web Development • Education",
       status: "In Progress",
       year: "2026",
-      tech: ["Next.js", "Node.js", "MySQL", "Redis", "Tailwind CSS"],
+      tech: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
       liveUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
       repoUrl: "https://github.com/MusyafaAnasrullah/musyafaanasrullah",
-      overview: "Sistem kasir modern berbasis web yang dirancang untuk transaksi kilat, cetak struk thermal, dan rekap penjualan otomatis.",
-      problem: "Proses transaksi ritel yang lambat di kasir mengakibatkan antrean panjang dan pencatatan kas harian yang tidak akurat.",
-      solution: "Membangun aplikasi POS ringan berkecepatan tinggi dengan offline-first capability dan integrasi driver cetak thermal ESC/POS.",
-      architecture: "Next.js Web App dengan Service Worker offline caching, Node.js API Gateway, Redis session storage, dan MySQL DB.",
+      overview: "Platform website kelas online interaktif dengan manajemen materi kursus, video pembelajaran digital, kuis evaluasi, dan tracking progres belajar siswa.",
+      problem: "Kebutuhan platform pembelajaran daring yang terintegrasi, interaktif, dan mudah digunakan bagi siswa maupun pengajar.",
+      solution: "Membangun web app kelas online modern berbasis Next.js dan PostgreSQL dengan modul materi terstruktur, video pembelajaran, dan kuis evaluasi otomatis.",
+      architecture: "Fullstack Next.js App Router dengan Server Actions, PostgreSQL relational database, Prisma ORM, dan Tailwind CSS.",
       features: [
-        "Checkout transaksi ultra-cepat dengan keyboard shortcuts",
-        "Pencetakan nota transaksi thermal via Web Bluetooth/USB",
-        "Rekapitulasi omzet dan profit harian otomatis",
-        "Offline transaction queue dengan auto-sync saat koneksi pulih"
+        "Sistem manajemen kelas & kurikulum terstruktur",
+        "Modul video pembelajaran digital interaktif",
+        "Kuis interaktif & penilaian otomatis",
+        "Pelacakan progres belajar siswa real-time",
+        "Penerbitan sertifikat kelulusan digital"
       ],
-      challenges: "Memastikan antrean transaksi offline dapat tersinkronisasi tanpa duplikasi atau konflik ID data.",
-      learned: "Konsep offline-first design, Service Worker caching, dan protokol percetakan thermal ESC/POS."
+      challenges: "Menyediakan rendering video pembelajaran yang cepat serta sinkronisasi kuis dan progres belajar secara real-time.",
+      learned: "Penguasaan Next.js, TypeScript, integrasi PostgreSQL, dan manajemen state pembelajaran."
     }
   };
 
